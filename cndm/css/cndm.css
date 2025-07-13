@@ -1,0 +1,452 @@
+@import url("clash-display.css");
+@import url("https://rsms.me/inter/inter.css");
+/* Background and compact styling */
+        :root {
+            --discord-blurple: #5865F2;
+            --discord-green: #57F287;
+            --discord-dark: #23272A;
+            --discord-darker: #1e2124;
+            --discord-purple: #9b84ee;
+            --discord-pink: #eb459e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        *,
+*::after,
+*::before {
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
+        
+        body {
+            background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(144, 168, 237, 1) 100%);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(91, 101, 242, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(87, 242, 135, 0.1) 0%, transparent 20%) ;
+            z-index: -1;
+        }
+        
+        .discord-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+        }
+        
+        .container-fluid {
+            padding: 2rem;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .dashboard {
+            display: flex;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 1) url(../assets/bg.png);
+            border-radius: 24px;
+            overflow: hidden;
+              border: 2px solid #fff;
+  outline: 2px solid #000;
+            backdrop-filter: blur(10px);
+            min-height: 80vh;
+        }
+        
+        /* Left Content Panel */
+        .content-panel {
+            flex: 1;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .bot-logo {
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+              border: 2px solid #90a8ed;
+  outline: 2px solid #000;
+        }
+        
+        .bot-logo i {
+            font-size: 4rem;
+            color: #000;
+        }
+        
+        .main-heading {
+            font-size: 3.5rem;
+            font-weight: 800;
+            font-family: 'ClashDisplay-Semibold', sans-serif;
+            margin-bottom: 1.5rem;
+            background: #000;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 2.5rem;
+            max-width: 90%;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+  .invite-btn {
+  background: #ffc900;
+  width: 300px;
+  color: 000;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 2px solid #fff;;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  outline: 2px solid #000;
+  font-family: 'ClashDisplay-Medium', sans-serif;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
+}
+
+.invite-btn .icon {
+  background: #fff;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  outline: 2px solid #000;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.invite-btn:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.invite-btn .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #000;
+}
+
+.invite-btn:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.invite-btn:active .icon {
+  transform: scale(0.95);
+}
+
+        
+        .game-modes-section {
+            margin-top: 4rem;
+            position: relative;
+            padding-top: 2rem;
+            
+        }
+        
+        .game-modes-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #ffc900,#ffc900);
+            border-radius: 2px;
+        }
+        
+        .section-label {
+            color: #000;
+            font-weight: 600;
+            font-family: 'ClashDisplay-Semibold', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .game-slider-container {
+            width: 100%;
+            position: relative;
+            height: 70px;
+            overflow: hidden;
+            border-radius: 16px;
+            background: #000;
+            border: 2px solid #000;
+        }
+        
+        .game-slider-track {
+            display: flex;
+            position: absolute;
+            top: 15px;
+            animation: slide 30s linear infinite;
+        }
+        
+        .game-logo {
+            width: 120px;
+            height: 40px;
+            margin: 0 1.5rem;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .game-logo:hover {
+            transform: translateY(-5px);
+            background: rgba(87, 242, 135, 0.1);
+            border-color: rgba(87, 242, 135, 0.2);
+        }
+        
+        .game-logo i {
+            font-size: 1.8rem;
+            color: var(--discord-green);
+        }
+        
+        /* Stats Panel */
+        .stats-panel {
+            flex: 1;
+            padding: 3rem;
+            position: relative;
+            min-height: 600px;
+        }
+        
+        .stats-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .stat-card {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: #fff;
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+              border: 2px solid #fff;
+  outline: 2px solid #000;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+        
+        .stat-card-1 {
+            top: 15%;
+            right: 20%;
+            background: #fff;
+        }
+        
+        .stat-card-2 {
+            top: 45%;
+            right: 55%;
+            background: #90a8ed;
+        }
+        
+        .stat-card-3 {
+            top: 65%;
+            right: 10%;
+            background: #ffc900;
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
+            background: #000;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .stat-title {
+            font-size: 1.0rem;
+            color: #000;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .stat-value {
+            font-size: 2.8rem;
+            font-weight: 800;
+            font-family: 'ClashDisplay-Bold', sans-serif;
+            background: #000;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+        }
+        
+        /* Decorations */
+        .discord-icon {
+            position: absolute;
+            font-size: 10rem;
+            color: rgba(255, 255, 255, 0.02);
+            z-index: 0;
+        }
+        
+        .discord-icon-1 {
+            top: 10%;
+            right: 10%;
+        }
+        
+        .discord-icon-2 {
+            bottom: 10%;
+            left: 10%;
+            transform: rotate(30deg);
+        }
+        
+        /* Animations */
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+        
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        .stat-card-1 {
+            animation-delay: 0s;
+        }
+        
+        .stat-card-2 {
+            animation-delay: 0.3s;
+        }
+        
+        .stat-card-3 {
+            animation-delay: 0.6s;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .dashboard {
+                flex-direction: column;
+                min-height: auto;
+            }
+            
+            .content-panel {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            
+            .stats-container {
+                height: 600px;
+                margin-top: 2rem;
+            }
+            
+            .stat-card-1 {
+                top: 10%;
+                right: 5%;
+            }
+            
+            .stat-card-2 {
+                top: 40%;
+                left: 5%;
+            }
+            
+            .stat-card-3 {
+                top: 70%;
+                right: 5%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container-fluid {
+                padding: 1rem;
+                height: auto;
+            }
+            
+            .content-panel, .stats-panel {
+                padding: 2rem;
+            }
+            
+            .main-heading {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .stat-card {
+                width: 170px;
+                height: 170px;
+                padding: 1.5rem;
+            }
+            
+            .stat-value {
+                font-size: 2.2rem;
+            }
+        }
