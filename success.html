@@ -2,66 +2,37 @@
 <html>
 <head>
   <title>Payment Success</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 30px;
-      max-width: 600px;
-      margin: auto;
-    }
-    #paymentInfo {
-      margin-top: 20px;
-      background: #f9f9f9;
-      padding: 20px;
-      border-radius: 12px;
-      border: 1px solid #ddd;
-    }
-  </style>
 </head>
 <body>
-  <h1>Thanks for your purchase!</h1>
-  <p>We're processing your premium access.</p>
-
-  <div id="paymentInfo">Loading payment details...</div>
+  <h1>Payment Success</h1>
+  <p id="paymentInfo">Checking payment...</p>
 
   <script>
-    const sessionId = new URLSearchParams(window.location.search).get("session_id");
-    const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL8qSbiiYNM6m-zccQissyV_pksjEbZeAHLhpQpqtpjBkuMwEX6lMyEN5-gaxIAwbTvY7R9pWmSlUE/pub?output=csv";
-
-    async function findPayment(sessionId) {
-      try {
-        const res = await fetch(sheetUrl);
-        const text = await res.text();
-        const rows = text.trim().split("\n").map(row => row.split(","));
-
-        const header = rows[0];
-        const data = rows.slice(1);
-
-        const match = data.find(row => row[0] === sessionId);
-        if (match) {
-          const [session_id, payment_id, email, amount, status] = match;
-          document.getElementById("paymentInfo").innerHTML = `
-            <p><strong>Payment ID:</strong> ${payment_id}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Amount:</strong> $${amount}</p>
-            <p><strong>Status:</strong> ${status}</p>
-          `;
-        } else {
-          document.getElementById("paymentInfo").innerHTML = `
-            <p>We couldn't find your payment yet.</p>
-            <p>It may take a few seconds to appear. Try refreshing the page in 10–15 seconds.</p>
-          `;
-        }
-      } catch (err) {
-        document.getElementById("paymentInfo").innerText = "Error loading payment data.";
-        console.error(err);
-      }
+    function getQueryParam(name) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
     }
 
-    if (sessionId) {
-      findPayment(sessionId);
+    const paymentId = getQueryParam('payment_id');
+
+    if (!paymentId) {
+      document.getElementById('paymentInfo').innerText = 'No payment ID provided in URL.';
     } else {
-      document.getElementById("paymentInfo").innerText = "Missing session ID.";
+      const url = 'https://script.google.com/macros/s/AKfycbw6-gpeH7iWWyqTvdUF6xLV8HnoXeZ8BwZ0HWIetIWgrY4JJasz7GuFaaDc89ECqRV6ng/exec?payment_id=' + encodeURIComponent(paymentId);
+
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          if (data.error) {
+            document.getElementById('paymentInfo').innerText = 'Error: ' + data.error;
+          } else {
+            document.getElementById('paymentInfo').innerText = `Payment ID: ${data.payment_id} — verified!`;
+          }
+        })
+        .catch(err => {
+          document.getElementById('paymentInfo').innerText = 'Failed to fetch payment info.';
+          console.error(err);
+        });
     }
   </script>
 </body>
