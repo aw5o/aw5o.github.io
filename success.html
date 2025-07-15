@@ -2,30 +2,66 @@
 <html>
 <head>
   <title>Payment Success</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+    }
+    #paymentInfo {
+      margin-top: 20px;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+    }
+  </style>
 </head>
 <body>
   <h1>Thanks for your purchase!</h1>
-  <div id="paymentInfo">Loading...</div>
+  <p>We're processing your premium access.</p>
+
+  <div id="paymentInfo">Loading payment details...</div>
 
   <script>
     const sessionId = new URLSearchParams(window.location.search).get("session_id");
+    const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL8qSbiiYNM6m-zccQissyV_pksjEbZeAHLhpQpqtpjBkuMwEX6lMyEN5-gaxIAwbTvY7R9pWmSlUE/pub?output=csv";
 
-    if (!sessionId) {
-      document.getElementById("paymentInfo").innerText = "Missing session ID";
-    } else {
-      fetch(`https://kv.replit.app/v1/YOUR_DB_ID/get?key=${sessionId}`)
-        .then(res => res.json())
-        .then(data => {
+    async function findPayment(sessionId) {
+      try {
+        const res = await fetch(sheetUrl);
+        const text = await res.text();
+        const rows = text.trim().split("\n").map(row => row.split(","));
+
+        const header = rows[0];
+        const data = rows.slice(1);
+
+        const match = data.find(row => row[0] === sessionId);
+        if (match) {
+          const [session_id, payment_id, email, amount, status] = match;
           document.getElementById("paymentInfo").innerHTML = `
-            <p><strong>Payment ID:</strong> ${data.payment_id}</p>
-            <p><strong>Email:</strong> ${data.email}</p>
-            <p><strong>Amount:</strong> $${data.amount}</p>
-            <p><strong>Status:</strong> ${data.status}</p>
+            <p><strong>Payment ID:</strong> ${payment_id}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Amount:</strong> $${amount}</p>
+            <p><strong>Status:</strong> ${status}</p>
           `;
-        })
-        .catch(() => {
-          document.getElementById("paymentInfo").innerText = "Payment not found.";
-        });
+        } else {
+          document.getElementById("paymentInfo").innerHTML = `
+            <p>We couldn't find your payment yet.</p>
+            <p>It may take a few seconds to appear. Try refreshing the page in 10–15 seconds.</p>
+          `;
+        }
+      } catch (err) {
+        document.getElementById("paymentInfo").innerText = "Error loading payment data.";
+        console.error(err);
+      }
+    }
+
+    if (sessionId) {
+      findPayment(sessionId);
+    } else {
+      document.getElementById("paymentInfo").innerText = "Missing session ID.";
     }
   </script>
 </body>
