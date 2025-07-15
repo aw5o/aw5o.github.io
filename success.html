@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Success</title>
+</head>
+<body>
+  <h1>Thanks for your purchase!</h1>
+  <div id="paymentInfo">Loading...</div>
+
+  <script>
+    const sessionId = new URLSearchParams(window.location.search).get("session_id");
+
+    if (!sessionId) {
+      document.getElementById("paymentInfo").innerText = "Missing session ID";
+    } else {
+      fetch(`https://kv.replit.app/v1/YOUR_DB_ID/get?key=${sessionId}`)
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("paymentInfo").innerHTML = `
+            <p><strong>Payment ID:</strong> ${data.payment_id}</p>
+            <p><strong>Email:</strong> ${data.email}</p>
+            <p><strong>Amount:</strong> $${data.amount}</p>
+            <p><strong>Status:</strong> ${data.status}</p>
+          `;
+        })
+        .catch(() => {
+          document.getElementById("paymentInfo").innerText = "Payment not found.";
+        });
+    }
+  </script>
+</body>
+</html>
