@@ -98,8 +98,7 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  background: url("assets/b2g.png") no-repeat center center fixed,
-    linear-gradient(90deg, #8f73ed 35%, #8f73ed 100%);
+  background: url("assets/b2g.png") no-repeat center center fixed, var(--color-body);
   background-size: cover;
   background-attachment: fixed;
   position: relative;
@@ -108,9 +107,7 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
-.content-section {
-  background: rgb(143, 115, 237, 0.86); /* Semi-transparent overlay */
-  backdrop-filter: blur(5px);
+.content-section { /* Semi-transparent overlay */
   min-height: 100vh;
   padding: 20px 0;
   display: flex;
@@ -2059,7 +2056,5 @@ body {
 }
 
 @media (min-width: 768px) {
-  .content-section {
-    background: rgba(5, 10, 50, 0.92); /* Slightly more opaque on desktop */
-  }
+
 }
