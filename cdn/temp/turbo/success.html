@@ -2,162 +2,183 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Purchase Turbo - Skye</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Purchase Turbo - Skye</title>
 
-  <!-- Bootstrap 5.3 CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://paycoin-php.vercel.app/assets/css/fontawesome.css" />
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="../skye/components/styles.css">
+    <!-- Bootstrap 5.3 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://paycoin-php.vercel.app/assets/css/fontawesome.css" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../skye/components/styles.css">
 </head>
 
 
 <body>
     <style>
-.confetti-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 9998;
-}
-</style>
-  <div class="mobile-container">
-    <canvas class="confetti-canvas" id="confetti-canvas"></canvas>
-  <!-- Page Loader -->
-  <div class="loader-wrapper" id="loader">
-    <div class="loader-content w-100" style="max-width: 680px;">
-      <img src="../skye/components/assets/icon.svg" alt="Squid Loading" class="loader-logo">
-      <div class="loader-bar">
-        <div class="loader-progress"></div>
-      </div>
-      <div class="text-center mt-4">
-        <small style="color: rgba(255, 255, 255, 0.5); font-size: 11px; line-height: 1.4;">
-          Skye is an independent service and is not affiliated with or endorsed by Epic Games. Use at your own discretion.<br>Features and access may be modified or revoked without notice due to technical or policy changes beyond our control.
-        </small>
-      </div>
-      <img src="https://visitor-badge.laobi.icu/badge?page_id=aw5o.aw5o.github.io" alt="Visitor Count"
-        style="filter: grayscale(100%); width: 60px; margin-top: 10px;opacity:0.5">
-    </div>
-  </div>
+        .confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            /* Below content */
+        }
 
-<section id="get-started" class="main-content">
-  <div class="container d-flex flex-column justify-content-center align-items-center h-100 px-3">
-    <div class="page-header d-flex align-items-center justify-content-center w-100 mb-4">
-      <button class="btn btn-back me-2">
-        <i class="fa-solid fa-arrow-left"></i>
-      </button>
-      <h2 class="lexap2 mb-0 flex-grow-1 text-truncate">Turbo Activation</h2>
-      <img src="../skye/components/assets/icon.svg" alt="Skye Icon" class="sky-icon ms-2">
-    </div>
-
-      <div class="w-100" style="max-width: 600px;">
-
-        <div class="card mb-4">
-          <div class="card-body">
-            <h5 class="card-title text-center"><img src="https://skye.run/cdn/skye-turbo.png" width="100px"><br>Thank-you for purchase!</h5>
-            <p class="card-text turbo-t text-center">New Features Unlocked</p>
-<div class="d-flex flex-wrap justify-content-center gap-3 mb-3">
-  <div class="feature-icon" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Nickname Color Change">
-    <img src="pantone.png" alt="Nickname" />
-  </div>
-  <div class="feature-icon" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instant Support">
-    <img src="helpdesk.png" alt="Support" />
-  </div>
-  <div class="feature-icon" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ads Posting Permit">
-    <img src="advertisement.png" alt="Ads" />
-  </div>
-  <div class="feature-icon" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Writing Unlocked">
-    <img src="unlock.png" alt="Unlock" />
-  </div>
-  <div class="feature-icon" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Polls Unlocked">
-    <img src="polls.png" alt="Polls" />
-  </div>
-  <div class="feature-icon" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Access to Giveaways">
-    <img src="giveaway.png" alt="Giveaways" />
-  </div>
-</div>
-
-          </div>
+        .content-section {
+            position: relative;
+            z-index: 10;
+            /* Above confetti */
+        }
+    </style>
+    <div class="mobile-container">
+        <canvas class="confetti-canvas" id="confetti-canvas"></canvas>
+        <!-- Page Loader -->
+        <div class="loader-wrapper" id="loader">
+            <div class="loader-content w-100" style="max-width: 680px;">
+                <img src="../skye/components/assets/icon.svg" alt="Squid Loading" class="loader-logo">
+                <div class="loader-bar">
+                    <div class="loader-progress"></div>
+                </div>
+                <div class="text-center mt-4">
+                    <small style="color: rgba(255, 255, 255, 0.5); font-size: 11px; line-height: 1.4;">
+                        Skye is an independent service and is not affiliated with or endorsed by Epic Games. Use at your
+                        own discretion.<br>Features and access may be modified or revoked without notice due to
+                        technical or policy changes beyond our control.
+                    </small>
+                </div>
+                <img src="https://visitor-badge.laobi.icu/badge?page_id=aw5o.aw5o.github.io" alt="Visitor Count"
+                    style="filter: grayscale(100%); width: 60px; margin-top: 10px;opacity:0.5">
+            </div>
         </div>
 
+        <section id="get-started" class="main-content">
+            <div class="container d-flex flex-column justify-content-center align-items-center h-100 px-3">
+                <div class="page-header d-flex align-items-center justify-content-center w-100 mb-4">
+                    <button class="btn btn-back me-2">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <h2 class="lexap2 mb-0 flex-grow-1 text-truncate">Turbo Activation</h2>
+                    <img src="../skye/components/assets/icon.svg" alt="Skye Icon" class="sky-icon ms-2">
+                </div>
 
-<div class="card mb-4 shadow-sm">
-  <div class="card-body">
-    <h5 class="card-title text-center fw-bold">How to Activate Turbo 🚀</h5>
-    <ol class="list-group list-group-numbered">
-      <li class="list-group-item">Join our <a href="https://discord.gg/yourserver" target="_blank">Discord server</a>.</li>
-      <li class="list-group-item">Go to the <strong class="discord-channel"><i class="fa-regular fa-hashtag"></i> 🤖︱start</strong> channel.</li>
-      <li class="list-group-item">
-  Click the <span class="turbo-button">
-    <img src="https://skye.run/cdn/skye-turbo.png" width="16" height="16" alt="Turbo icon">
-    Activate Turbo
-  </span> button.
-</li>
+                <div class="w-100" style="max-width: 600px;">
 
-      <li class="list-group-item">Enter your secret catchphrase code and click <strong>Submit</strong>.</li>
-    </ol>
-  </div>
-</div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-center"><img src="https://skye.run/cdn/skye-turbo.png"
+                                    width="100px"><br>Thank-you for purchase!</h5>
+                            <p class="card-text turbo-t text-center">New Features Unlocked</p>
+                            <div class="d-flex flex-wrap justify-content-center gap-3 mb-3">
+                                <div class="feature-icon" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                    title="Nickname Color Change">
+                                    <img src="pantone.png" alt="Nickname" />
+                                </div>
+                                <div class="feature-icon" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                    title="Instant Support">
+                                    <img src="helpdesk.png" alt="Support" />
+                                </div>
+                                <div class="feature-icon" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                    title="Ads Posting Permit">
+                                    <img src="advertisement.png" alt="Ads" />
+                                </div>
+                                <div class="feature-icon" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                    title="Writing Unlocked">
+                                    <img src="unlock.png" alt="Unlock" />
+                                </div>
+                                <div class="feature-icon" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                    title="Polls Unlocked">
+                                    <img src="polls.png" alt="Polls" />
+                                </div>
+                                <div class="feature-icon" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                    title="Access to Giveaways">
+                                    <img src="giveaway.png" alt="Giveaways" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-center fw-bold">How to Activate Turbo 🚀</h5>
+                            <ol class="list-group list-group-numbered">
+                                <li class="list-group-item">Join our <a href="https://discord.gg/yourserver"
+                                        target="_blank">Discord server</a>.</li>
+                                <li class="list-group-item">Go to the <strong class="discord-channel"><i
+                                            class="fa-regular fa-hashtag"></i> 🤖︱start</strong> channel.</li>
+                                <li class="list-group-item">
+                                    Click the <span class="turbo-button">
+                                        <img src="https://skye.run/cdn/skye-turbo.png" width="16" height="16"
+                                            alt="Turbo icon">
+                                        Activate Turbo
+                                    </span> button.
+                                </li>
+
+                                <li class="list-group-item">Enter your secret catchphrase code and click
+                                    <strong>Submit</strong>.</li>
+                            </ol>
+                        </div>
+                    </div>
 
 
 
 
-      </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../skye/components/scripts.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Initialize tooltips
+                document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+                    new bootstrap.Tooltip(el);
+                });
+
+                // Trigger confetti
+                const canvas = document.getElementById('confetti-canvas');
+                const myConfetti = confetti.create(canvas, {
+                    resize: true,
+                    useWorker: true
+                });
+
+                myConfetti({
+                    particleCount: 200,
+                    spread: 100,
+                    startVelocity: 35,
+                    origin: { y: 0.6 },
+                    colors: ['#ff00ddff', '#ffa3a3ff', '#ff00bfff', '#beacffff', '#ff00ff', '#00ffff'],
+                    shapes: ['circle', 'square'],
+                    scalar: 1.2
+                });
+
+                // Additional effects
+                setTimeout(() => {
+                    myConfetti({
+                        particleCount: 50,
+                        angle: 60,
+                        spread: 80,
+                        origin: { x: 0, y: 0.7 }
+                    });
+                }, 300);
+
+                setTimeout(() => {
+                    myConfetti({
+                        particleCount: 50,
+                        angle: 120,
+                        spread: 80,
+                        origin: { x: 1, y: 0.7 }
+                    });
+                }, 600);
+            });
+        </script>
     </div>
-  </section>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../skye/components/scripts.js"></script>
-  <script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Initialize tooltips
-  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
-    new bootstrap.Tooltip(el);
-  });
-  
-  // Trigger confetti
-  const canvas = document.getElementById('confetti-canvas');
-  const myConfetti = confetti.create(canvas, {
-    resize: true,
-    useWorker: true
-  });
-  
-  myConfetti({
-    particleCount: 200,
-    spread: 100,
-    startVelocity: 35,
-    origin: { y: 0.6 },
-    colors: ['#ff00ddff', '#ffa3a3ff', '#ff00bfff', '#beacffff', '#ff00ff', '#00ffff'],
-    shapes: ['circle', 'square'],
-    scalar: 1.2
-  });
-
-  // Additional effects
-  setTimeout(() => {
-    myConfetti({
-      particleCount: 50,
-      angle: 60,
-      spread: 80,
-      origin: { x: 0, y: 0.7 }
-    });
-  }, 300);
-
-  setTimeout(() => {
-    myConfetti({
-      particleCount: 50,
-      angle: 120,
-      spread: 80,
-      origin: { x: 1, y: 0.7 }
-    });
-  }, 600);
-});
-  </script>
-  </div>
 </body>
+
 </html>

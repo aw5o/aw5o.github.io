@@ -14,25 +14,25 @@ function simulateLoading() {
   const interval = setInterval(() => {
     progress += Math.random() * 10;
     progressBar.style.width = `${Math.min(progress, 100)}%`;
-    
-  if (progress >= 100) {
-    clearInterval(interval);
-    setTimeout(() => {
-      loader.style.opacity = "0";
-      loader.style.visibility = "hidden";
-      body.classList.remove("loading");
-      body.classList.add("loaded");
-      
-      // Show ALL main-content sections on standalone pages
-      if (!document.getElementById("home")) {
-        document.querySelectorAll(".main-content").forEach(section => {
-          section.classList.add("visible");
-        });
-      } else {
-        // For index.html, only show home section
-        document.getElementById("home").classList.add("visible");
-      }
-    }, 50);
+
+    if (progress >= 100) {
+      clearInterval(interval);
+      setTimeout(() => {
+        loader.style.opacity = "0";
+        loader.style.visibility = "hidden";
+        body.classList.remove("loading");
+        body.classList.add("loaded");
+
+        // Show ALL main-content sections on standalone pages
+        if (!document.getElementById("home")) {
+          document.querySelectorAll(".main-content").forEach((section) => {
+            section.classList.add("visible");
+          });
+        } else {
+          // For index.html, only show home section
+          document.getElementById("home").classList.add("visible");
+        }
+      }, 50);
     }
   }, 20);
 }
@@ -60,8 +60,10 @@ function animateCounters() {
     const increment = target / speed;
 
     const formatNumber = (num) => {
-      if (num >= 1_000_000) return (num / 1_000_000).toFixed(1).replace(/\.0$/, "") + "M";
-      if (num >= 1_000) return (num / 1_000).toFixed(1).replace(/\.0$/, "") + "K";
+      if (num >= 1_000_000)
+        return (num / 1_000_000).toFixed(1).replace(/\.0$/, "") + "M";
+      if (num >= 1_000)
+        return (num / 1_000).toFixed(1).replace(/\.0$/, "") + "K";
       return Math.floor(num).toString();
     };
 
@@ -88,12 +90,12 @@ function navigateTo(sectionId) {
   const targetSection = document.getElementById(sectionId);
   if (targetSection) {
     targetSection.classList.add("visible");
-    window.scrollTo(0, 0);
-    
-    // Add this for mobile scrolling
-    setTimeout(() => {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
-    }, 300);
+
+    // Scroll to top of the section
+    window.scrollTo({
+      top: targetSection.offsetTop,
+      behavior: "smooth",
+    });
   }
 }
 
@@ -120,15 +122,22 @@ function showStep(stepNumber) {
 
   let stepElement;
   switch (stepNumber) {
-    case 1: stepElement = document.getElementById("step-tos"); break;
-    case 2: stepElement = document.getElementById("step-catchphrase"); break;
-    case 3: stepElement = document.getElementById("step-payment"); break;
+    case 1:
+      stepElement = document.getElementById("step-tos");
+      break;
+    case 2:
+      stepElement = document.getElementById("step-catchphrase");
+      break;
+    case 3:
+      stepElement = document.getElementById("step-payment");
+      break;
   }
 
   if (stepElement) {
     stepElement.classList.add("active");
     if (stepNumber === 3 && secretCatchphrase) {
-      document.getElementById("payment-catchphrase").textContent = secretCatchphrase;
+      document.getElementById("payment-catchphrase").textContent =
+        secretCatchphrase;
     }
   }
 
@@ -151,10 +160,14 @@ function initTurboPurchase() {
 
   if (tosScroll && agreeButton) {
     agreeButton.disabled = true;
-    setTimeout(() => { tosScroll.scrollTop = 0; }, 100);
+    setTimeout(() => {
+      tosScroll.scrollTop = 0;
+    }, 100);
 
     tosScroll.addEventListener("scroll", () => {
-      const atBottom = tosScroll.scrollTop + tosScroll.clientHeight >= tosScroll.scrollHeight - 5;
+      const atBottom =
+        tosScroll.scrollTop + tosScroll.clientHeight >=
+        tosScroll.scrollHeight - 5;
       agreeButton.disabled = !atBottom;
     });
 
@@ -251,40 +264,53 @@ function initTurboPurchase() {
 
       document.body.insertAdjacentHTML("beforeend", modalHTML);
 
-      const paymentModal = new bootstrap.Modal(document.getElementById("paymentModal"));
+      const paymentModal = new bootstrap.Modal(
+        document.getElementById("paymentModal")
+      );
       paymentModal.show();
 
-      document.getElementById("copy-catchphrase").addEventListener("click", function () {
-        const copyText = document.getElementById("modal-catchphrase");
-        copyText.select();
-        document.execCommand("copy");
-        const original = this.innerHTML;
-        this.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-        setTimeout(() => { this.innerHTML = original; }, 2000);
-      });
+      document
+        .getElementById("copy-catchphrase")
+        .addEventListener("click", function () {
+          const copyText = document.getElementById("modal-catchphrase");
+          copyText.select();
+          document.execCommand("copy");
+          const original = this.innerHTML;
+          this.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+          setTimeout(() => {
+            this.innerHTML = original;
+          }, 2000);
+        });
 
-      document.getElementById("proceed-to-payment").addEventListener("click", function () {
-        window.open("https://buy.stripe.com/test_3cI5kDb1v65V5Kl7y6g3601", "_blank");
-        paymentModal.hide();
-      });
+      document
+        .getElementById("proceed-to-payment")
+        .addEventListener("click", function () {
+          window.open(
+            "https://buy.stripe.com/test_3cI5kDb1v65V5Kl7y6g3601",
+            "_blank"
+          );
+          paymentModal.hide();
+        });
 
-      document.getElementById("paymentModal").addEventListener("hidden.bs.modal", function () {
-        document.querySelector(".modal-backdrop")?.remove();
-        document.body.classList.remove("modal-open");
-        document.body.style.paddingRight = "";
-        document.body.style.overflow = "";
-        this.remove();
-      });
+      document
+        .getElementById("paymentModal")
+        .addEventListener("hidden.bs.modal", function () {
+          document.querySelector(".modal-backdrop")?.remove();
+          document.body.classList.remove("modal-open");
+          document.body.style.paddingRight = "";
+          document.body.style.overflow = "";
+          this.remove();
+        });
     });
   }
 }
 
 // Accordion initialization
 function initAccordion() {
-  const accordions = document.querySelectorAll('.accordion-button');
-  accordions.forEach(accordion => {
-    accordion.addEventListener('click', () => {
-      accordion.classList.toggle('active');
+  const accordions = document.querySelectorAll(".accordion-button");
+  accordions.forEach((accordion) => {
+    accordion.addEventListener("click", () => {
+      accordion.classList.toggle("active");
     });
   });
 }
@@ -295,39 +321,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setTimeout(() => {
     initCarousel();
-    
+
     // Initialize accordion if it exists
-    if (document.querySelector('.accordion')) {
+    if (document.querySelector(".accordion")) {
       initAccordion();
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounters();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounters();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-    const statsSection = document.querySelector('.hero-stats');
+    const statsSection = document.querySelector(".hero-stats");
     if (statsSection) observer.observe(statsSection);
 
     if (document.getElementById("turbo")) {
       initTurboPurchase();
     }
 
-    document.querySelectorAll('[data-target]').forEach(btn => {
+    document.querySelectorAll("[data-target]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const target = btn.getAttribute("data-target");
         navigateTo(target);
       });
     });
 
-    document.querySelectorAll('.btn-back').forEach(btn => {
+    document.querySelectorAll(".btn-back").forEach((btn) => {
       btn.addEventListener("click", backToHome);
     });
-    
+
     // Handle standalone back buttons
     const goToHome = document.getElementById("goToHome");
     if (goToHome) {

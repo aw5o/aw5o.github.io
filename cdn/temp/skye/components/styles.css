@@ -16,11 +16,7 @@
   --color-text: #ffffff;
   --color-heading: #e0e3ff;
   --color-white: #e0e3ff;
-  --color-body: linear-gradient(
-    90deg,
-    rgb(9, 9, 19) 35%,
-    rgba(0, 0, 0, 1) 100%
-  );
+  --color-body: linear-gradient(90deg, #8f73ed 35%, #8f73ed 100%);
   --color-bg: radial-gradient(
     circle,
     rgba(3, 119, 194, 1) 0%,
@@ -102,14 +98,25 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  background: url("assets/b2g.png") no-repeat, var(--color-body);
+  background: url("assets/b2g.png") no-repeat center center fixed,
+    linear-gradient(90deg, #8f73ed 35%, #8f73ed 100%);
+  background-size: cover;
+  background-attachment: fixed;
   position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
-
+.content-section {
+  background: rgb(143, 115, 237, 0.86); /* Semi-transparent overlay */
+  backdrop-filter: blur(5px);
+  min-height: 100vh;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .loader-wrapper {
   position: fixed;
   top: 0;
@@ -305,7 +312,6 @@ h6 {
 }
 
 .main-content.visible {
-
 }
 
 .gradient-text {
@@ -567,7 +573,11 @@ h6 {
   overflow: hidden;
   border: 2px solid transparent;
   outline: 2px solid #000;
-  background: linear-gradient(90deg,rgba(255, 201, 102, 1) 50%, rgba(255, 149, 0, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 201, 102, 1) 50%,
+    rgba(255, 149, 0, 1) 100%
+  );
   padding: 8px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease;
@@ -596,14 +606,14 @@ h6 {
   position: relative;
   padding-left: 2.5rem;
   border: none;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  background-color: rgba(255,255,255,0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.5);
   transition: background-color 0.2s ease-in-out;
   font-size: 1rem;
   color: #000;
 }
 .discord-channel {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   padding: 3px;
   font-weight: 600;
@@ -621,7 +631,6 @@ h6 {
   gap: 6px;
 }
 
-
 .list-group-numbered .list-group-item::before {
   content: counter(custom-counter) ".";
   position: absolute;
@@ -637,10 +646,9 @@ h6 {
 }
 
 .list-group-numbered .list-group-item:hover {
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   cursor: pointer;
 }
-
 
 .hero-stats {
   position: absolute;
@@ -1146,8 +1154,6 @@ h6 {
   }
 }
 /* Sections Container */
-
-
 
 .main-content.visible {
   opacity: 1;
@@ -1785,102 +1791,102 @@ body.modal-open {
     overflow-y: auto;
     background-size: cover;
   }
-  
+
   .container {
     padding: 0 15px;
   }
-  
+
   /* Header adjustments */
   .d-flex.align-items-center.justify-content-center {
     flex-wrap: wrap;
   }
-  
+
   .btn-back {
     margin-right: 10px;
     margin-bottom: 10px;
   }
-  
+
   .sky-icon {
     width: 30px;
     height: 30px;
   }
-  
+
   h2.lexap2 {
     font-size: 1.5rem;
     margin-top: 10px;
     margin-bottom: 10px;
   }
-  
+
   /* Card adjustments */
   .card {
     width: 100%;
     margin-bottom: 15px;
   }
-  
+
   /* FAQ accordion fix */
   #faqAccordion {
     width: 100% !important;
     max-width: 100% !important;
   }
-  
+
   /* Step indicators */
   .step-bubble {
     width: 25px;
     height: 25px;
     font-size: 12px;
   }
-  
+
   /* Feature icons grid */
   .d-flex.flex-wrap.justify-content-center.gap-3 {
     gap: 10px !important;
   }
-  
+
   .feature-icon {
     width: 50px;
     height: 50px;
   }
-  
+
   /* Form input */
   #catchphrase-input {
     font-size: 16px;
   }
-  
+
   /* TOS content */
   #tos-scroll.scroll {
     max-height: 300px;
     padding: 10px;
     font-size: 13px;
   }
-  
+
   /* List items */
   .list-group-item {
     font-size: 14px;
     padding-left: 1.8rem;
   }
-  
+
   .list-group-item::before {
     left: 0.5rem;
   }
-  
+
   /* Confetti canvas */
   .confetti-canvas {
     position: fixed;
     width: 100%;
     height: 100%;
   }
-  
+
   /* Progress bar */
   .progress {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   /* Visitor badge */
   img[src*="visitor-badge"] {
     width: 50px;
   }
-}/* Add this at the end of styles.css */
+} /* Add this at the end of styles.css */
 @media (max-width: 768px) {
   /* FAQ accordion fix */
   #faqAccordion {
@@ -1888,12 +1894,12 @@ body.modal-open {
     max-width: 100% !important;
     padding: 0 10px;
   }
-  
+
   .accordion-button {
     padding: 1rem !important;
     font-size: 14px !important;
   }
-  
+
   .accordion-body {
     padding: 0.8rem !important;
     font-size: 13px !important;
@@ -1911,19 +1917,19 @@ body.modal-open {
     padding: 0 10px;
     margin-bottom: 15px;
   }
-  
+
   .btn-back {
     padding: 5px 10px;
     font-size: 14px;
     margin-right: 10px;
     min-width: 40px;
   }
-  
+
   .sky-icon {
     width: 36px !important;
     height: 36px !important;
   }
-  
+
   .lexap2 {
     font-size: 1.2rem !important;
     white-space: nowrap;
@@ -1938,21 +1944,22 @@ body.modal-open {
     overflow-x: hidden;
     padding-right: 0 !important;
   }
-  
+
   .sections-container {
     width: 100%;
     overflow: hidden;
   }
-  
+
   .main-content {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-    .card, .accordion {
+  .card,
+  .accordion {
     width: 95% !important;
     margin: 0 auto 20px;
   }
-  
+
   #tos-scroll.scroll {
     max-height: 50vh;
   }
@@ -1971,14 +1978,14 @@ body.modal-open {
     overflow-x: hidden;
     position: relative;
   }
-  
+
   .main-content {
     position: relative;
     height: auto;
     min-height: 100vh;
     overflow-x: hidden;
   }
-  
+
   .hero-stats-card {
     position: relative !important;
     transform: none !important;
@@ -1988,20 +1995,22 @@ body.modal-open {
     bottom: auto !important;
     margin: 15px auto;
   }
-  
+
   .game-slider-track {
     width: calc(100vw * 2) !important;
   }
 }
 
 /* Prevent horizontal overflow */
-html, body {
+html,
+body {
   overflow-x: hidden;
   width: 100%;
 }
 
 /* Remove absolute positioning */
-.sections-container, .main-content {
+.sections-container,
+.main-content {
   position: static !important;
   height: auto !important;
   overflow: visible !important;
@@ -2038,4 +2047,19 @@ html, body {
 .main-content {
   position: relative;
   z-index: 10; /* Higher than confetti */
+}
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.container {
+  padding: 0 15px;
+}
+
+@media (min-width: 768px) {
+  .content-section {
+    background: rgba(5, 10, 50, 0.92); /* Slightly more opaque on desktop */
+  }
 }
