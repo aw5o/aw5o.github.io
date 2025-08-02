@@ -1792,3 +1792,158 @@ body.modal-open {
   transform: translateY(0);
   opacity: 1;
 }
+
+/* Add this at the end of styles.css */
+@media (max-width: 768px) {
+  /* General mobile adjustments */
+  body {
+    overflow-y: auto;
+    background-size: cover;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  /* Header adjustments */
+  .d-flex.align-items-center.justify-content-center {
+    flex-wrap: wrap;
+  }
+  
+  .btn-back {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .sky-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  h2.lexap2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Card adjustments */
+  .card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* FAQ accordion fix */
+  #faqAccordion {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Step indicators */
+  .step-bubble {
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+  }
+  
+  /* Feature icons grid */
+  .d-flex.flex-wrap.justify-content-center.gap-3 {
+    gap: 10px !important;
+  }
+  
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Form input */
+  #catchphrase-input {
+    font-size: 16px;
+  }
+  
+  /* TOS content */
+  #tos-scroll.scroll {
+    max-height: 300px;
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  /* List items */
+  .list-group-item {
+    font-size: 14px;
+    padding-left: 1.8rem;
+  }
+  
+  .list-group-item::before {
+    left: 0.5rem;
+  }
+  
+  /* Confetti canvas */
+  .confetti-canvas {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Progress bar */
+  .progress {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Visitor badge */
+  img[src*="visitor-badge"] {
+    width: 50px;
+  }
+}/* Add this at the end of styles.css */
+@media (max-width: 768px) {
+  /* FAQ accordion fix */
+  #faqAccordion {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 10px;
+  }
+  
+  .accordion-button {
+    padding: 1rem !important;
+    font-size: 14px !important;
+  }
+  
+  .accordion-body {
+    padding: 0.8rem !important;
+    font-size: 13px !important;
+  }
+}
+
+/* Add this at the end of styles.css */
+/* Mobile header adjustments */
+@media (max-width: 768px) {
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 15px;
+  }
+  
+  .btn-back {
+    padding: 5px 10px;
+    font-size: 14px;
+    margin-right: 10px;
+    min-width: 40px;
+  }
+  
+  .sky-icon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  
+  .lexap2 {
+    font-size: 1.2rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 50vw;
+  }
+}
