@@ -239,7 +239,7 @@ function initTurboPurchase() {
     });
   }
   
-  // Step 3: Payment
+  // Step 3: Payment - UPDATED SOLUTION
   const payButton = document.getElementById('pay-now');
   if (payButton) {
     payButton.addEventListener('click', function() {
@@ -249,37 +249,10 @@ function initTurboPurchase() {
         return;
       }
       
-      // Create form with required Stripe parameters
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.action = 'https://buy.stripe.com/checkout';
-      
-      // Add Stripe parameters
-      const params = {
-        'client_reference_id': 'turbo-purchase-' + Date.now(),
-        'buy_button_id': 'buy_btn_1Rri8QEYH7w5MZNfCioY6uOO',
-        'key': 'pk_test_51LlatMEYH7w5MZNfBxDVZEHI83hL4Joh46hW7boqCJa838cRXzlZzDmffyIje8qfavIqiq5JDhsrlyX4SSXDK3V200s9C29YEP'
-      };
-      
-      // Add parameters to form
-      for (const key in params) {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = key;
-        input.value = params[key];
-        form.appendChild(input);
-      }
-      
-      // Add catchphrase as custom field - using the correct ID
-      const catchphraseInput = document.createElement('input');
-      catchphraseInput.type = 'hidden';
-      catchphraseInput.name = 'custom[condomsecretkey]'; // Match your Stripe field ID
-      catchphraseInput.value = secretCatchphrase;
-      form.appendChild(catchphraseInput);
-      
-      // Submit form
-      document.body.appendChild(form);
-      form.submit();
+      // Direct redirect with correct field ID
+      const paymentUrl = 'https://buy.stripe.com/test_3cI5kDb1v65V5Kl7y6g3601';
+      const fullUrl = `${paymentUrl}?prefilled_fields[condomsecretkey]=${encodeURIComponent(secretCatchphrase)}`;
+      window.location.href = fullUrl;
     });
   }
 }
