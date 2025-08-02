@@ -1146,30 +1146,8 @@ h6 {
   }
 }
 /* Sections Container */
-.sections-container {
-  position: relative;
-  width: 100%;
-  height: auto; /* Changed from 100vh */
-  min-height: 100vh;
-  overflow: hidden; /* Prevent internal overflow */
-}
 
 
-/* Main Content Sections */
-.main-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  overflow-y: auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
 
 .main-content.visible {
   opacity: 1;
@@ -2020,4 +1998,44 @@ body.modal-open {
 html, body {
   overflow-x: hidden;
   width: 100%;
+}
+
+/* Remove absolute positioning */
+.sections-container, .main-content {
+  position: static !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* New layout for index.html */
+#home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add to bottom of CSS */
+.main-content {
+  position: relative;
+  min-height: 100vh;
+  padding: 20px 0;
+  display: none;
+  opacity: 0;
+  transform: none !important;
+}
+
+.main-content.visible {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 1;
+}
+
+.confetti-canvas {
+  z-index: 1 !important; /* Lower than content */
+}
+
+.main-content {
+  position: relative;
+  z-index: 10; /* Higher than confetti */
 }

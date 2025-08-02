@@ -23,10 +23,15 @@ function simulateLoading() {
       body.classList.remove("loading");
       body.classList.add("loaded");
       
-      // Fix: Show ALL main-content sections
-      document.querySelectorAll(".main-content").forEach(section => {
-        section.classList.add("visible");
-      });
+      // Show ALL main-content sections on standalone pages
+      if (!document.getElementById("home")) {
+        document.querySelectorAll(".main-content").forEach(section => {
+          section.classList.add("visible");
+        });
+      } else {
+        // For index.html, only show home section
+        document.getElementById("home").classList.add("visible");
+      }
     }, 50);
     }
   }, 20);
@@ -83,11 +88,12 @@ function navigateTo(sectionId) {
   const targetSection = document.getElementById(sectionId);
   if (targetSection) {
     targetSection.classList.add("visible");
-    const backButton = document.getElementById("back-button");
-    if (backButton) {
-      backButton.style.display = sectionId === "home" ? "none" : "block";
-    }
     window.scrollTo(0, 0);
+    
+    // Add this for mobile scrolling
+    setTimeout(() => {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }, 300);
   }
 }
 
