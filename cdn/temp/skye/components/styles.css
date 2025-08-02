@@ -98,8 +98,8 @@ body {
   color: var(--color-text);
   line-height: var(--line-height-body);
   min-height: 100vh; /* Changed from height:100vh */
-  overflow-y: hidden;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: auto; /* Change from hidden to auto */
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
   background: url("assets/b2g.png") no-repeat, var(--color-body);
@@ -1946,4 +1946,28 @@ body.modal-open {
     text-overflow: ellipsis;
     max-width: 50vw;
   }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    padding-right: 0 !important;
+  }
+  
+  .sections-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .main-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.mobile-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
 }
