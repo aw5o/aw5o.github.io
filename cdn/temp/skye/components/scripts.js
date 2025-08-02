@@ -15,15 +15,19 @@ function simulateLoading() {
     progress += Math.random() * 10;
     progressBar.style.width = `${Math.min(progress, 100)}%`;
     
-    if (progress >= 100) {
-      clearInterval(interval);
-      setTimeout(() => {
-        loader.style.opacity = "0";
-        loader.style.visibility = "hidden";
-        body.classList.remove("loading");
-        body.classList.add("loaded");
-        document.querySelector(".main-content")?.classList.add("visible");
-      }, 50);
+  if (progress >= 100) {
+    clearInterval(interval);
+    setTimeout(() => {
+      loader.style.opacity = "0";
+      loader.style.visibility = "hidden";
+      body.classList.remove("loading");
+      body.classList.add("loaded");
+      
+      // Fix: Show ALL main-content sections
+      document.querySelectorAll(".main-content").forEach(section => {
+        section.classList.add("visible");
+      });
+    }, 50);
     }
   }, 20);
 }
