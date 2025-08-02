@@ -23,9 +23,6 @@ function simulateLoading() {
         body.classList.remove("loading");
         body.classList.add("loaded");
         document.querySelector(".main-content")?.classList.add("visible");
-        if (document.querySelector('.turbo-t')) {
-        triggerConfetti();
-      }
       }, 50);
     }
   }, 20);
@@ -91,11 +88,18 @@ function navigateTo(sectionId) {
 }
 
 function backToHome() {
-  document.querySelectorAll(".main-content").forEach((section) => {
-    section.classList.remove("visible");
-  });
-  document.getElementById("home")?.classList.add("visible");
-  window.scrollTo(0, 0);
+  // Check if we're on a standalone page (buy.html/success.html) or index.html
+  if (document.getElementById("home")) {
+    // We're on index.html - show home section
+    document.querySelectorAll(".main-content").forEach((section) => {
+      section.classList.remove("visible");
+    });
+    document.getElementById("home")?.classList.add("visible");
+    window.scrollTo(0, 0);
+  } else {
+    // We're on a standalone page - redirect to index
+    window.location.href = "../index.html";
+  }
 }
 
 // Turbo logic
@@ -155,7 +159,7 @@ function initTurboPurchase() {
     backButton.parentNode.replaceChild(newBackButton, backButton);
 
     newBackButton.addEventListener("click", () => {
-      if (currentStep === 1) window.location.href = "../index.html";
+      if (currentStep === 1) backToHome();
       else showStep(currentStep - 1);
     });
   }
@@ -264,41 +268,15 @@ function initTurboPurchase() {
     });
   }
 }
-function triggerConfetti() {
-  const canvas = document.getElementById('confetti-canvas');
-  const myConfetti = confetti.create(canvas, {
-    resize: true,
-    useWorker: true
-  });
-  
-  myConfetti({
-    particleCount: 200,
-    spread: 100,
-    startVelocity: 35,
-    origin: { y: 0.6 },
-    colors: ['#ff00ddff', '#ffa3a3ff', '#ff00bfff', '#beacffff', '#ff00ff', '#00ffff'],
-    shapes: ['circle', 'square'],
-    scalar: 1.2
-  });
-  
-  // Additional effects
-  setTimeout(() => {
-    myConfetti({
-      particleCount: 50,
-      angle: 60,
-      spread: 80,
-      origin: { x: 0, y: 0.7 }
+
+// Accordion initialization
+function initAccordion() {
+  const accordions = document.querySelectorAll('.accordion-button');
+  accordions.forEach(accordion => {
+    accordion.addEventListener('click', () => {
+      accordion.classList.toggle('active');
     });
-  }, 300);
-  
-  setTimeout(() => {
-    myConfetti({
-      particleCount: 50,
-      angle: 120,
-      spread: 80,
-      origin: { x: 1, y: 0.7 }
-    });
-  }, 600);
+  });
 }
 
 // DOM Ready
@@ -307,7 +285,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setTimeout(() => {
     initCarousel();
-    initAccordion();
+    
+    // Initialize accordion if it exists
+    if (document.querySelector('.accordion')) {
+      initAccordion();
+    }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -335,10 +317,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.btn-back').forEach(btn => {
       btn.addEventListener("click", backToHome);
     });
-
-    const goHome = document.getElementById("go-home");
+    
+    // Handle standalone back buttons
     const goToHome = document.getElementById("goToHome");
-    if (goHome) goHome.addEventListener("click", () => window.location.href = "../index.html");
-    if (goToHome) goToHome.addEventListener("click", () => window.location.href = "../index.html");
+    if (goToHome) {
+      goToHome.addEventListener("click", backToHome);
+    }
   }, 1000);
 });
