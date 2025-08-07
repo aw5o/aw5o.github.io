@@ -496,6 +496,10 @@ body {
 
 
 .video-container {
+  position: relative;
+  width: 100%;       /* full width of parent */
+  max-width: 300px;  /* max width for bigger screens */
+  aspect-ratio: 16 / 9;  /* keep 16:9 ratio automatically */
   border-radius: 16px;
   outline: 2px solid transparent;
   overflow: hidden;
@@ -503,12 +507,19 @@ body {
   border: 2px solid rgba(255, 255, 255, 0.1);
   background: rgba(0, 0, 0, 0.2);
   margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto; /* center horizontally */
 }
 
 .video-container iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 14px;
   background: #000;
   border: 2px solid #000;
+  border-radius: 14px;
 }
 
 /* Glow effect on hover */
@@ -517,4 +528,11 @@ body {
     0 0 30px rgba(223, 178, 255, 0.3);
   transition: all 0.3s ease;
   transform: scale(1.01);
+}
+
+/* Optional: tweak margin on very small screens */
+@media (max-width: 320px) {
+  .video-container {
+    max-width: 100%;  /* let it use full width if tiny screen */
+  }
 }
