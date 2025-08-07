@@ -1,0 +1,520 @@
+@import url("https://rsms.me/inter/inter.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
+body {
+  background: linear-gradient(135deg, #00000c 0%, #010012 100%);
+  color: #f9fafb;
+  font-family: "Inter", system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Grid pattern background */
+.grid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 80px 80px;
+  z-index: 1;
+  opacity: 0.4;
+  animation: gridMove 30s infinite linear;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 80px 80px;
+  }
+}
+
+/* Hero section */
+.hero-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* ensures top and bottom spacing */
+  min-height: 100vh;
+  padding: 6rem 2rem 3rem;
+  z-index: 3;
+}
+.hero-section .container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.skye-icon {
+  width: 120px;
+}
+.hero-heading {
+  width: 100%;
+  text-align: center;
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 85px;
+  font-style: normal;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+  color: rgba(255, 255, 255, 0.8);
+
+  background: linear-gradient(to right, #bdc6df, #ffffff, #bdc6df);
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: headingGradient 1.8s ease forwards;
+}
+
+.gradient-text {
+  background: -webkit-linear-gradient(#bae8f9, #c987fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtext {
+  font-size: 20px;
+  color: rgba(241, 247, 254, 0.71);
+  line-height: 28px;
+  max-width: 700px;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0 auto 2.5rem;
+}
+
+@keyframes headingGradient {
+  to {
+    background-position: 0% 0;
+  }
+}
+
+@keyframes gradient-slide {
+  0% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+/* Button styling */
+.btn-explore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #fff;
+  border: none;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1.1rem 2.5rem;
+  border-radius: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+.btn-explore:hover {
+  transform: translateY(-5px);
+}
+
+.btn-explore:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.btn-explore:hover:before {
+  left: 100%;
+}
+
+/* Decorative elements */
+.decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.circle-1 {
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 162, 239, 0.212) 0%,
+    transparent 70%
+  );
+  top: 2%;
+  left: 0%;
+  animation: pulse 8s infinite alternate;
+}
+
+.circle-2 {
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(160, 220, 255, 0.212) 0%,
+    transparent 70%
+  );
+  bottom: 25%;
+  right: 0%;
+  animation: pulse 6s infinite alternate-reverse;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.4;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .btn-explore {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .circle-1,
+  .circle-2 {
+    display: none;
+  }
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.text-footer {
+  color: rgba(241, 247, 254, 0.71);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.text-footer-link {
+  color: rgba(241, 247, 254, 0.71);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.text-footer-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.2); /* dark gray */
+  margin: 0 0.4em; /* space around the separator */
+}
+.btn-turbo-t {
+  background-image: linear-gradient(
+    270deg,
+    #ff7700,
+    #ff0051,
+    #000,
+    #ff7700,
+    #ff0051
+  );
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-loop 6s ease infinite;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-turbo {
+  background: #fff;
+}
+
+.btn-turbo:hover {
+  background: #fff;
+  text-decoration: none;
+  color: #000;
+}
+
+@keyframes gradient-loop {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* Modal customizations */
+.modal-content {
+    background: transparent;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(115, 70, 255, 0.3);
+    border-color: rgba(255,255,255,0.1)!important;
+}
+
+.modal-header {
+    padding: 1.2rem 1.5rem;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    padding: 1rem 1.5rem;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .hero-heading {
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    
+    .hero-subtext {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+    
+    .btn-explore {
+        padding: 0.9rem 1.8rem;
+        font-size: 1rem;
+    }
+    
+    .modal-dialog {
+        margin: 1rem;
+    }
+    
+    .modal-content {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-heading {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+    
+    .skye-icon {
+        width: 90px;
+    }
+    
+    .modal-title {
+        font-size: 1.25rem;
+    }
+    
+    .btn-explore {
+        width: 90%;
+        padding: 0.8rem;
+    }
+}
+/* General Modal Overrides */
+.modal-content {
+    background-color: #000000 !important;
+    border-radius: 12px;
+    border-color: rgba(255,255,255,0.1)!important;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.modal-header,
+.modal-footer {
+    background-color: #000000;
+    border-color: rgba(255,255,255,0.1)!important;
+}
+
+.modal-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.modal-body {
+    color: #cfcfcf;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Close button */
+.btn-close-white {
+    filter: brightness(0.7) invert(1);
+}
+
+/* Accept/Action button */
+.modal-footer .btn-primary {
+    background-color: #5865f2;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #4752c4;
+}
+
+/* Cancel button */
+.modal-footer .btn-secondary {
+    background-color: #2e2e33;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    color: #ddd;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #3a3a3e;
+}
+
+/* Custom list styles in modal */
+.modal-body ul {
+    padding-left: 1.2rem;
+}
+
+.modal-body ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Info Alert */
+.alert-info {
+    background-color: #2e3a5c;
+    border-color: #3a4d77;
+    color: #dce3f1;
+    font-size: 0.9rem;
+}
+
+/* Icons inside modal titles */
+.modal-title i {
+    color: #facc15; /* Discord yellow */
+}
+
+/* Scrollable Terms of Service Modal */
+#tosModal .modal-body {
+    max-height: 60vh; /* Adjust as needed for screen size */
+    overflow-y: auto;
+    padding-right: 1rem; /* Prevent text from hiding under scrollbar */
+}
+
+/* Custom scrollbar styling (WebKit-based browsers) */
+#tosModal .modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+#tosModal .modal-body::-webkit-scrollbar-track {
+    background: #020202;
+    border-radius: 4px;
+}
+
+#tosModal .modal-body::-webkit-scrollbar-thumb {
+    background-color: #b86ea2;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+#tosModal .modal-body::-webkit-scrollbar-thumb:hover {
+    background-color: #666;
+}
+
+#tosModal h5  {
+    font-size: 15px;
+    color: rgb(207, 163, 207);
+    font-weight: 600;
+}
+
+#tosModal p {
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}
+
+#tosModal li {
+    font-size: 12px;
+    color: rgba(214, 205, 205, 0.8);
+}
+
+@media (max-width: 400px) {
+  .modal-dialog {
+    max-width: 100%;
+    margin: 0.5rem;
+  }
+
+  .modal-content {
+    border-radius: 8px;
+  }
+}
+
+
+.video-container {
+  border-radius: 16px;
+  outline: 2px solid transparent;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+  margin-top: 15px;
+}
+
+.video-container iframe {
+  border-radius: 14px;
+  background: #000;
+  border: 2px solid #000;
+}
+
+/* Glow effect on hover */
+.video-container:hover {
+  box-shadow: 0 0 15px rgba(223, 178, 255, 0.5),
+    0 0 30px rgba(223, 178, 255, 0.3);
+  transition: all 0.3s ease;
+  transform: scale(1.01);
+}
