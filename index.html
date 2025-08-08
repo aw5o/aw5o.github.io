@@ -1,121 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>condom.cv</title>
-    <!-- Bootstrap 5.3 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link href="cndm/css/cndm.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://paycoin-php.vercel.app/assets/css/fontawesome.css">
+    <title>Skye - Fortnite Lobby Bots</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://paycoin-php.vercel.app/assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="skye/app.css">
+    <link rel="shortcut icon" href="skye/favicon.png" type="image/x-icon" />
 </head>
 
 <body>
-    <div class="discord-grid"></div>
-    
-    <div class="container-fluid">
-        <div class="dashboard">
-            <!-- Left Content Panel -->
-            <div class="content-panel">
-                <div class="bot-logo">
-                    <img src="cndm/assets/icon.gif" width="100px">
-                </div>
-                
-                <h1 class="main-heading">condom.cv</h1>
-                <p class="subtitle">Want to have fun with free Fortnite lobby bots?<br>Join our Discord  and grab yours now!</p>
-                
-                <button class="invite-btn">
-  Get Bot Lobbies
-  <div class="icon">
-    <svg
-      height="24"
-      width="24"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M0 0h24v24H0z" fill="none"></path>
-      <path
-        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-        fill="currentColor"
-      ></path>
-    </svg>
-  </div>
-</button>
-                
-                <div class="game-modes-section">
-                    <span class="section-label">Supported Game Modes <i class="fa-solid fa-arrow-down-left"></i></span>
-                    <div class="game-slider-container">
-                        <div class="game-slider-track">
-                            <div class="game-logo">
-                               <img src="cndm/assets/reload.png" width="100px">
-                            </div>
-                            <div class="game-logo">
-                               <img src="cndm/assets/blitz.png" width="100px">
-                            </div>
-                            <div class="game-logo">
-                                <img src="cndm/assets/zero.png" width="100px">
-                            </div>
-                            <div class="game-logo">
-                                <img src="cndm/assets/build.png" width="100px">
-                            </div>
-                            <div class="game-logo">
-                               <img src="cndm/assets/reload.png" width="100px">
-                            </div>
-                            <div class="game-logo">
-                               <img src="cndm/assets/blitz.png" width="100px">
-                            </div>
-                            <div class="game-logo">
-                                <img src="cndm/assets/zero.png" width="100px">
-                            </div>
-                            <div class="game-logo">
-                                <img src="cndm/assets/build.png" width="100px">
-                            </div>
-                        </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-3">
+        <div class="container d-flex justify-content-between align-items-center" style="max-width: 1000px;">
+            <div class="d-flex align-items-center">
+                <img src="https://cdn2.steamgriddb.com/icon_thumb/1bda4c789c38754f639a376716c5859f.png" alt="Logo"
+                    width="24" height="24" class="me-2">
+                <span class="text-white fw-bold">Skye</span>
+            </div>
+            <!-- Turbo Button with Modal Trigger -->
+            <button class="btn btn-sm btn-turbo fw-semibold px-3 py-1 rounded-pill" data-bs-toggle="modal"
+                data-bs-target="#turboModal">
+                <span class="btn-turbo-t"><i class="fa-solid fa-square-bolt"></i> Turbo</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Grid pattern background -->
+    <div class="grid-bg"></div>
+
+    <!-- Decorative elements -->
+    <div class="decorative-circle circle-1"></div>
+    <div class="decorative-circle circle-2"></div>
+
+    <!-- Hero section -->
+    <section class="hero-section">
+        <div class="container d-flex flex-column justify-content-between h-100">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="text-center">
+                        <img src="skye/skye-icon.svg" class="skye-icon mb-5"><br>
+                        <h1 class="hero-heading mb-4">
+                            Enjoy Fortnite<br><span class="gradient-text">again</span> with help of <span
+                                class="gradient-text">Skye</span>
+                        </h1>
+                        <p class="hero-subtext mb-5">
+                            Fortnite bot lobbies in 5 seconds — zero cost, always ready.
+                        </p>
+                        <button id="discordBtn" class="btn-explore mb-3">
+                            Connect with <i class="fa-brands fa-discord"></i> Discord
+                            <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
                     </div>
                 </div>
             </div>
-            
-            <!-- Right Stats Panel -->
-            <div class="stats-panel">
-                <div class="stats-container">
-                    <div class="stat-card stat-card-1 floating">
-                        <div class="stat-icon">
-                            <img src="cndm/assets/wins.svg" width="150px">
-                        </div>
-                        <div class="stat-title">Total Victories</div>
-                        <div class="stat-value" id="total-wins">0</div>
-                    </div>
-                    
-                    <div class="stat-card stat-card-2 floating">
-                        <div class="stat-icon">
-                            <img src="cndm/assets/crowns.svg" width="70px">
-                        </div>
-                        <div class="stat-title">Total Crowns</div>
-                        <div class="stat-value" id="crowns">0</div>
-                    </div>
-                    
-                    <div class="stat-card stat-card-3 floating">
-                        <div class="stat-icon">
-                            <img src="cndm/assets/plays.svg" width="65px">
-                        </div>
-                        <div class="stat-title">Total Matches</div>
-                        <div class="stat-value" id="matches">0</div>
-                    </div>
+
+            <!-- Footer inside hero-section -->
+            <footer class="text-center mt-4">
+                <p class="text-footer small mb-0">
+                    Brought to you by <a href="https://discord.com/users/633600812970541056"
+                        class="text-footer-link">miso</a>
+                    <span class="separator">•</span>
+                    <a href="https://fnlb.net/" target="_blank" rel="noopener noreferrer"
+                        class="text-footer-link">FNLB</a>
+                    <span class="separator">•</span>
+                    <!-- Terms of Service Link with Modal Trigger -->
+                    <a href="#" class="text-footer-link" data-bs-toggle="modal" data-bs-target="#tosModal">Terms of
+                        Service</a>
+                </p>
+            </footer>
+        </div>
+    </section>
+
+    <!-- Turbo Modal -->
+    <div class="modal fade" id="turboModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white border border-secondary">
+                <div class="modal-header border-bottom border-secondary">
+                    <h5 class="modal-title">
+                        <i class="fa-solid fa-square-bolt me-2 text-warning"></i> Turbo – Support Project Skye
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
-                
-                <i class="fab fa-discord discord-icon discord-icon-1"></i>
-                <i class="fab fa-discord discord-icon discord-icon-2"></i>
+                <div class="modal-body">
+                    <p>If you'd like to support the Skye project, you can purchase the <strong>Turbo</strong> role for a
+                        one-time payment of <strong>$10.00</strong>.</p>
+                    <p>Turbo mode provides:</p>
+                    <ul>
+                        <li>Access to the Skye Promotion System (SPS)</li>
+                        <li>Ability to change your Discord name color:</li>
+                        <div class="mt-2 mb-3">
+                            <i class="fa-solid fa-circle me-2" style="color: #dd1b1b;"></i>
+                            <i class="fa-solid fa-circle me-2" style="color: #f6e321;"></i>
+                            <i class="fa-solid fa-circle me-2" style="color: #d260ff;"></i>
+                            <i class="fa-solid fa-circle me-2" style="color: #3ac724;"></i>
+                            <i class="fa-solid fa-circle me-2" style="color: #1f92e5;"></i>
+                            <i class="fa-solid fa-circle me-2" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-circle"
+                                style="background: linear-gradient(to right, #ff7700, #ff0051); -webkit-background-clip: text; color: transparent;"></i>
+                        </div>
+                    </ul>
+                    <div class="alert alert-secondary mt-3">
+                        <i class="fa-solid fa-info-circle me-2"></i>You’ll receive a Turbo activation guide after
+                        purchase.
+
+                    </div>
+                    <div class="alert alert-warning mt-3">
+                        <i class="fa-solid fa-key me-2"></i><strong>Important:</strong> During payment, you must enter a
+                        <strong>Secret catch phrase</strong>. It can be anything you like (up to 12 characters,
+                        lowercase letters, numbers, or dashes only).
+                    </div>
+                    <div class="mt-3 text-center">
+                        <stripe-buy-button buy-button-id="buy_btn_1Rri8QEYH7w5MZNfCioY6uOO"
+                            publishable-key="pk_test_51LlatMEYH7w5MZNfBxDVZEHI83hL4Joh46hW7boqCJa838cRXzlZzDmffyIje8qfavIqiq5JDhsrlyX4SSXDK3V200s9C29YEP">
+                        </stripe-buy-button>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer border-top border-secondary">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-   <script src="cndm/scripts/cndm.js"></script>
+
+
+
+
+    <!-- Terms of Service Modal -->
+    <div class="modal fade" id="tosModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content bg-dark text-white border border-secondary">
+                <div class="modal-header border-bottom border-secondary">
+                    <h5 class="modal-title"><i class="fa-solid fa-file-contract me-2"></i>Terms of Service</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-primary fade show" role="alert">
+                        <strong>Effective Date:</strong> July 31, 2025
+
+                    </div>
+                    <h5>1. Terms of Use</h5>
+                    <p class="mb-3">By accessing or using Skye.run, you agree to these Terms of Service and our Privacy
+                        Policy.</p>
+                    <hr>
+                    <h5>2. What We Offer</h5>
+                    <p class="mb-3">Skye provides free, automated Fortnite Lobby Bots through Discord, enabling users to
+                        enjoy unranked AI matches. Access is managed entirely within our Discord server.
+                    </p>
+                    <hr>
+                    <h5>3. Access & Limitations</h5>
+                    <ul class="mb-3">
+                        <li>Bots are fully managed by our system — users cannot create, control, or modify them.</li>
+                        <li>No personal data is collected through Skye.</li>
+                        <li>All interactions take place on Discord.</li>
+                    </ul>
+                    <hr>
+                    <h5>4. Prohibited Activities</h5>
+                    <ul class="mb-3">
+                        <li>Cheating, exploiting, or unfair play in Fortnite.
+                        </li>
+                        <li>Scamming, reselling, or monetizing our bots.
+                        </li>
+                        <li>AViolating Epic Games’ or Discord’s terms of service.
+                        </li>
+                    </ul>
+                    <p class="mb-3">Any violations will result in immediate removal from the server and loss of access.
+                    </p>
+                    <hr>
+                    <h5>5. Bot Infrastructure</h5>
+                    <p class="mb-3">Lobby bots are provided by FNLB.net and operated by m1nsook (Discord ID). Skye
+                        serves solely as a distributor.
+
+                    </p>
+                    <hr>
+                    <h5>6. Turbo Role – $10.00 USD (Lifetime)
+
+                    </h5>
+                    <p class="mb-3">Turbo is taken as personal contribution towards the project and grants enhanced
+                        features and community privileges:</p>
+                    <ul class="mb-3">
+                        <li>Access to change 1-7 colors for nickname</li>
+                        <li>Access to Advertisement system</li>
+                    </ul>
+                    <p class="mb-3">Note: This is a digital product. No refunds are available. Benefits are applied
+                        immediately after purchase.
+
+                    </p>
+                    <hr>
+                    <h5>7. Community Guidelines</h5>
+                    </h5>
+                    <ul class="mb-3">
+                        <li>No spamming or NSFW content</li>
+                        <li>Respectful behavior is expected at all times
+                        </li>
+                        <li>Adherence to Discord’s Terms of Service is required
+                        </li>
+                        <li>Follow all directions from Skye staff members</li>
+                    </ul>
+                    <hr>
+                    <h5>8. Disclaimer</h5>
+                    </h5>
+                    <p class="mb-3">Skye is an independent service and is not affiliated with or endorsed by Epic Games.
+                        Use at your own discretion. Features and access may be modified or revoked without notice due to
+                        technical or policy changes beyond our control.
+
+                    </p>
+
+                </div>
+                <div class="modal-footer border-top border-secondary">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0MWJ26MSF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Q0MWJ26MSF');
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="skye/app.js"></script>
+    <script async src="https://js.stripe.com/v3/buy-button.js">
+    </script>
 </body>
 
 </html>
