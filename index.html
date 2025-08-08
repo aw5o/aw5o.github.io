@@ -2,13 +2,36 @@
 <html lang="en" data-bs-theme="dark">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Skye - Fortnite Lobby Bots</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="description" content="Skye offers Fortnite Bot Lobbies in 5 seconds — zero cost, always ready." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://skye.run/" />
+    <meta property="og:title" content="Skye - Fortnite Lobby Bots" />
+    <meta property="og:description"
+        content="Skye offers Fortnite Bot Lobbies in 5 seconds — zero cost, always ready." />
+    <meta property="og:image" content="https://skye.run/skye/og-image.png" />
+    <meta property="og:image:alt" content="Skye Fortnite Lobby Bots" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://skye.run/" />
+    <meta name="twitter:title" content="Skye - Fortnite Lobby Bots" />
+    <meta name="twitter:description"
+        content="Skye offers Fortnite Bot Lobbies in 5 seconds — zero cost, always ready." />
+    <meta name="twitter:image" content="https://skye.run/skye/twitter-image.png" />
+    <meta name="twitter:image:alt" content="Skye Fortnite Lobby Bots" />
+    <meta name="theme-color" content="#dfb2ff" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://paycoin-php.vercel.app/assets/css/fontawesome.css" />
-    <link rel="stylesheet" href="skye/app.css">
-    <link rel="shortcut icon" href="skye/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="skye/app.css" />
+    <link rel="shortcut icon" href="https://skye.run/skye/favicon.png" type="image/x-icon" />
 </head>
 
 <body>
@@ -20,12 +43,21 @@
                 <span class="text-white fw-bold">Skye</span>
             </div>
             <!-- Turbo Button with Modal Trigger -->
-            <button class="btn btn-sm btn-turbo fw-semibold px-3 py-1 rounded-pill" data-bs-toggle="modal"
-                data-bs-target="#turboModal">
-                <span class="btn-turbo-t"><i class="fa-solid fa-square-bolt"></i> Turbo</span>
-            </button>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-sm btn-turbo fw-semibold px-3 py-1 rounded-pill d-flex align-items-center me-2"
+                    data-bs-toggle="modal" data-bs-target="#turboModal">
+                    <span class="btn-turbo-t"><i class="fa-solid fa-square-bolt me-1"></i><span
+                            class="d-none d-md-inline">Turbo</span></span>
+                </button>
+                <!-- Twitter Icon Button -->
+                <a href="https://x.com/SkyeRunFN" target="_blank" rel="noopener noreferrer"
+                    class="d-flex align-items-center px-3 py-1 social-skye">
+                    <i class="fa-brands fa-square-x-twitter"></i>
+                </a>
+            </div>
         </div>
     </nav>
+
 
     <!-- Grid pattern background -->
     <div class="grid-bg"></div>
@@ -48,7 +80,10 @@
                         <p class="hero-subtext mb-5">
                             Fortnite bot lobbies in 5 seconds — zero cost, always ready.
                         </p>
-
+                        <button id="discordBtn" class="btn-explore">
+                            Connect with <i class="fa-brands fa-discord"></i> Discord
+                            <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -85,51 +120,52 @@
                     <p>If you'd like to support the Skye project, you can purchase the <strong>Turbo</strong> role for a
                         one-time payment of <strong>$10.00</strong>.</p>
                     <p>Turbo mode provides:</p>
-<p class="turbo-features text-center">
-    Access to the Skye Promotion System (SPS)<br>
-    Ability to change your Discord name color
-<div class="mt-2 mb-3 colorlist">
-    <span class="availablecolors">available colors</span>
-    <i class="fa-solid fa-circle me-2" style="color: #dd1b1b;"></i>
-    <i class="fa-solid fa-circle me-2" style="color: #f6e321;"></i>
-    <i class="fa-solid fa-circle me-2" style="color: #d260ff;"></i>
-    <i class="fa-solid fa-circle me-2" style="color: #3ac724;"></i>
-    <i class="fa-solid fa-circle me-2" style="color: #1f92e5;"></i>
-    <i class="fa-solid fa-circle me-2" style="color: #ffffff;"></i>
-    <i class="fa-solid fa-circle"
-        style="background: linear-gradient(to right, #ff7700, #ff0051); -webkit-background-clip: text; color: transparent;"></i>
-</div>
-</p>
+                    <p class="turbo-features text-center">
+                        Access to the Skye Promotion System (SPS)<br>
+                        Ability to change your Discord name color
+                    <div class="mt-2 mb-3 colorlist">
+                        <span class="availablecolors">available colors</span>
+                        <i class="fa-solid fa-circle me-2" style="color: #dd1b1b;"></i>
+                        <i class="fa-solid fa-circle me-2" style="color: #f6e321;"></i>
+                        <i class="fa-solid fa-circle me-2" style="color: #d260ff;"></i>
+                        <i class="fa-solid fa-circle me-2" style="color: #3ac724;"></i>
+                        <i class="fa-solid fa-circle me-2" style="color: #1f92e5;"></i>
+                        <i class="fa-solid fa-circle me-2" style="color: #ffffff;"></i>
+                        <i class="fa-solid fa-circle"
+                            style="background: linear-gradient(to right, #ff7700, #ff0051); -webkit-background-clip: text; color: transparent;"></i>
+                    </div>
+                    </p>
 
                     <div class="alert alert-secondary mt-3">
                         <i class="fa-solid fa-info-circle me-2"></i>You’ll receive a Turbo activation guide after
                         purchase.
 
                     </div>
-<div class="alert alert-danger mt-3 d-flex align-items-start">
-    <div class="text-center">
-        <strong>Important:</strong> During payment, you must enter a:
-        <div class="d-flex align-items-center justify-content-center my-2">
-            <strong class="fs-5 me-2"><i class="fa-solid fa-key me-2 fa-sm"></i> Private Skye Key</strong>
-            <i class="fa-solid fa-circle-question text-white"
-               data-bs-toggle="tooltip"
-               data-bs-html="true"
-               title="<img src='mysecretkey.png' alt='Example Key' style='max-width:200px;'>">
-            </i>
-        </div>
-        <small class="text-white">It can be anything you like (up to 12 characters, lowercase letters, numbers, without spaces).</small>
-    </div>
-</div>
+                    <div class="alert alert-danger mt-3 d-flex align-items-start">
+                        <div class="text-center">
+                            <strong>Important:</strong> During payment, you must enter a:
+                            <div class="d-flex align-items-center justify-content-center my-2">
+                                <strong class="fs-5 me-2"><i class="fa-solid fa-key me-2 fa-sm"></i> Private Skye
+                                    Key</strong>
+                                <i class="fa-solid fa-circle-question text-white" data-bs-toggle="tooltip"
+                                    data-bs-html="true"
+                                    title="<img src='mysecretkey.png' alt='Example Key' style='max-width:200px;'>">
+                                </i>
+                            </div>
+                            <small class="text-white">It can be anything you like (up to 12 characters, lowercase
+                                letters, numbers, without spaces).</small>
+                        </div>
+                    </div>
 
-<script>
-    // Initialize Bootstrap tooltips
-    document.addEventListener("DOMContentLoaded", function () {
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
-    });
-</script>
+                    <script>
+                        // Initialize Bootstrap tooltips
+                        document.addEventListener("DOMContentLoaded", function () {
+                            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                                return new bootstrap.Tooltip(tooltipTriggerEl)
+                            })
+                        });
+                    </script>
 
                     <div class="mt-3">
                         <input type="checkbox" id="agreeRules" class="form-check-input me-2">
@@ -139,11 +175,9 @@
                     </div>
 
                     <div id="stripeWrapper" class="mt-3 text-center stripewrapper" style="display: none;">
-<stripe-buy-button
-  buy-button-id="buy_btn_1Rtqe2EYH7w5MZNfA8IckYd5"
-  publishable-key="pk_live_51LlatMEYH7w5MZNfnvrUKp4bLgZMvxShkOXakgsZ3Ml73eG2RUOYRs8wqVwRrlXAlHNbbgJqxGzqIpktzH5i3qPO00PIWPJ0ql"
->
-</stripe-buy-button>
+                        <stripe-buy-button buy-button-id="buy_btn_1Rtqe2EYH7w5MZNfA8IckYd5"
+                            publishable-key="pk_live_51LlatMEYH7w5MZNfnvrUKp4bLgZMvxShkOXakgsZ3Ml73eG2RUOYRs8wqVwRrlXAlHNbbgJqxGzqIpktzH5i3qPO00PIWPJ0ql">
+                        </stripe-buy-button>
                     </div>
 
                     <script>
