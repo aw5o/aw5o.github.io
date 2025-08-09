@@ -10,6 +10,7 @@
 *::before {
   box-sizing: border-box;
   -webkit-user-drag: none;
+  -webkit-user-select: none;
 }
 
 :root {
