@@ -1,5 +1,5 @@
 const btn = document.getElementById('discordBtn');
-const discordInviteURL = "https://discord.gg/7QWfj9473B";
+const discordInviteURL = "https://discord.gg/wXNNxd7cAb";
 
 btn.addEventListener('click', () => {
   let countdown = 3;
