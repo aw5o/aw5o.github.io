@@ -1,0 +1,85 @@
+const translations = {
+  // Common translations
+  "common.site_name": "Skye",
+  "common.back_to_home": "Back to Home",
+  "common.twitter": "Twitter",
+  "common.brought_by": "Brought to you by",
+  "common.terms": "Terms of Service",
+  "common.language": "Language",
+  
+  // Index page
+  "index.title": "Skye - Fortnite Lobby Bots",
+  "index.heading": "Enjoy Fortnite<br><span class=\"gradient-text\">again</span> with help of <span class=\"gradient-text\">Skye</span>",
+  "index.subtitle": "Fortnite bot lobbies in 5 seconds — zero cost, always ready.",
+  "index.discord_button": "Connect with <i class=\"fa-brands fa-discord\"></i> Discord <i class=\"fas fa-arrow-right ms-2\"></i>",
+  
+  // Terms page
+  "terms.title": "Skye - Terms of Service",
+  "terms.heading": "Terms of Service",
+  "terms.effective_date": "Effective Date: July 31, 2025",
+  "terms.termsofuse": "1. Terms of Use",
+  "terms.accessingrules": "By accessing or using Skye.run, you agree to these Terms of Service and our Privacy Policy.",
+  "terms.whatweoffer": "2. What We Offer",
+  "terms.whatweoffer_subtitle": "Skye provides free, automated Fortnite Lobby Bots through Discord, enabling users to enjoy unranked AI matches. Access is managed entirely within our Discord server.",
+  "terms.accessandlimitations": "3. Access & Limitations",
+  "terms.accessandlimitations_1": "Bots are fully managed by our system — users cannot create, control, or modify them.",
+  "terms.accessandlimitations_2": "No personal data is collected through Skye.",
+  "terms.accessandlimitations_3": "All interactions take place on Discord.",
+  "terms.prohibited_activities": "4. Prohibited Activities",
+  "terms.prohibited_activities_1": "Cheating, exploiting, or unfair play in Fortnite.",
+  "terms.prohibited_activities_2": "Scamming, reselling, or monetizing our bots.",
+  "terms.prohibited_activities_3": "Violating Epic Games’ or Discord’s terms of service.",
+  "terms.prohibited_activities_note": "Any violations will result in immediate removal from the server and loss of access.",
+  "terms.bot_infrastructure": "5. Bot Infrastructure",
+  "terms.bot_infrastructure_note": "Lobby bots are provided by FNLB.net and operated by m1nsook (Discord ID). Skye serves solely as a distributor.",
+  "terms.turbo_role_title": "6. Turbo Role – $10.00 USD (Lifetime)",
+  "terms.turbo_role_description": "Turbo is taken as personal contribution towards the project and grants enhanced features and community privileges:",
+  "terms.turbo_role_benefit_1": "Access to change 1-7 colors for nickname",
+  "terms.turbo_role_benefit_2": "Access to Advertisement system",
+  "terms.turbo_role_note": "Note: This is a digital product. No refunds are available. Benefits are applied immediately after purchase.",
+  "terms.community_guidelines_title": "7. Community Guidelines",
+  "terms.community_guidelines_1": "No spamming or NSFW content",
+  "terms.community_guidelines_2": "Respectful behavior is expected at all times",
+  "terms.community_guidelines_3": "Adherence to Discord’s Terms of Service is required",
+  "terms.community_guidelines_4": "Follow all directions from Skye staff members",
+  "terms.disclaimer_title": "8. Disclaimer",
+  "terms.disclaimer_note": "Skye is an independent service and is not affiliated with or endorsed by Epic Games. Use at your own discretion. Features and access may be modified or revoked without notice due to technical or policy changes beyond our control.",
+
+
+  // Succes - post payment - page
+  "success.thank_you_heading": "Thank-you for Contribution",
+  "success.thank_you_gradient": "Contribution",
+  "success.activate_turbo_instructions": "Complete these steps below in order to Activate Turbo",
+  "success.step_1": "1. On our <a href=\"https://discord.gg/7QWfj9473B\" style=\"color:#5865F2\" class=\"skyeterms\"><i class=\"fa-brands fa-discord\"></i> Discord Server</a> locate channel called <span class=\"discord-channel\"><i class=\"fa-regular fa-hashtag\"></i>&nbsp;🤖︱start</span>",
+  "success.step_2": "2. Click on button Activate Turbo like shown below <i class=\"fa-solid fa-arrow-down-left\"></i>",
+  "success.bot_name": "Skye",
+  "success.embed_welcome": "Welcome to Skye.run!",
+  "success.embed_description": "Click buttons below to either obtain free lobby bot or check status of your payment.<br><br>",
+  "success.embed_footer": "www.skye.run - Fortnite Lobby Bots • Today at 04:26 PM",
+  "success.btn_get_free_lobby_bot": "Get Free Lobby Bot",
+  "success.btn_activate_turbo": "Activate Turbo",
+  "success.step_3": "3. It will pop-up small window, where you put the <strong>Private Skye Key</strong> used during payment and click Submit",
+  "success.private_key_label": "Private Skye Key",
+  "success.verify_payment_title": "Verify Payment",
+  "success.warning_message": "This form will be submitted to Skye. Do not share passwords or other sensitive information.",
+  "success.btn_cancel": "Cancel",
+  "success.btn_submit": "Submit",
+
+
+  // Turbo Modal
+  "modal.turbo_title": "<i class=\"fa-solid fa-square-bolt me-2 text-warning\"></i> Turbo – Support Project Skye",
+  "modal.turbo_content": "If you'd like to support the Skye project, you can purchase the <strong>Turbo</strong> role for a one-time payment of <strong>$10.00</strong>.",
+  "modal.turbo_features": "Turbo mode provides:",
+  "modal.feature1": "Access to the Skye Promotion System (SPS)",
+  "modal.feature2": "Ability to change your Discord name color",
+  "modal.available_colors": "available colors",
+  "modal.turbo_note": "You’ll receive a Turbo activation guide after purchase.",
+  "modal.important": "Important:",
+  "modal.important_content": "During payment, you must enter a:",
+  "modal.private_key": "Private Skye Key",
+  "modal.key_explanation": "It can be anything you like (up to 12 characters, lowercase letters, numbers, without spaces).",
+  "modal.terms_agree": "I have read and understand the <a href=\"terms\" class=\"skyeterms\">Terms of Service</a>.",
+  "modal.close": "Close"
+};
+
+export default translations;

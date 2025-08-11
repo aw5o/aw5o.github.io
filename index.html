@@ -5,8 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Skye - Fortnite Lobby Bots</title>
-    <meta name="description" content="Skye offers Fortnite Bot Lobbies in 5 seconds — zero cost, always ready." />
+    <title data-i18n="index.title">Skye - Fortnite Lobby Bots</title>
+    <meta name="description" content="Skye offers Fortnite Bot Lobbies in 5 seconds — zero cost, always ready."
+        data-i18n="index.description">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -34,13 +35,29 @@
     <link rel="shortcut icon" href="https://skye.run/skye/favicon.png" type="image/x-icon" />
 </head>
 
-<body>
+<body data-page="index">
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-3">
         <div class="container d-flex justify-content-between align-items-center" style="max-width: 1000px;">
             <div class="d-flex align-items-center">
                 <img src="https://cdn2.steamgriddb.com/icon_thumb/1bda4c789c38754f639a376716c5859f.png" alt="Logo"
                     width="24" height="24" class="me-2">
                 <span class="text-white fw-bold">Skye</span>
+                <!-- Language Switcher -->
+                <div class="dropdown ms-3">
+                    <button class="btn btn-sm btn-lang dropdown-toggle" type="button" id="languageDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-language me-1"></i> English
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="de">Deutsch</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="nl">Nederlands</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="pl">Polski</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="ko">한국어</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="ja">日本語</a></li>
+                    </ul>
+                </div>
             </div>
             <!-- Turbo Button with Modal Trigger -->
             <div class="d-flex align-items-center">
@@ -73,14 +90,14 @@
                 <div class="col-12">
                     <div class="text-center">
                         <img src="skye/skye-icon.svg" class="skye-icon mb-5"><br>
-                        <h1 class="hero-heading mb-4">
+                        <h1 class="hero-heading mb-4" data-i18n="index.heading">
                             Enjoy Fortnite<br><span class="gradient-text">again</span> with help of <span
                                 class="gradient-text">Skye</span>
                         </h1>
-                        <p class="hero-subtext mb-5">
+                        <p class="hero-subtext mb-5" data-i18n="index.subtitle">
                             Fortnite bot lobbies in 5 seconds — zero cost, always ready.
                         </p>
-                        <button id="discordBtn" class="btn-explore">
+                        <button id="discordBtn" class="btn-explore" data-i18n="index.discord_button">
                             Connect with <i class="fa-brands fa-discord"></i> Discord
                             <i class="fas fa-arrow-right ms-2"></i>
                         </button>
@@ -91,14 +108,14 @@
             <!-- Footer inside hero-section -->
             <footer class="text-center mt-4">
                 <p class="text-footer small mb-0">
-                    Brought to you by <a href="https://discord.com/users/633600812970541056"
-                        class="text-footer-link">miso</a>
+                    <span data-i18n="common.brought_by">Brought to you by</span> <a
+                        href="https://discord.com/users/633600812970541056" class="text-footer-link">miso</a>
                     <span class="separator">•</span>
                     <a href="https://fnlb.net/" target="_blank" rel="noopener noreferrer"
                         class="text-footer-link">FNLB</a>
                     <span class="separator">•</span>
                     <!-- Terms of Service Link with Modal Trigger -->
-                    <a href="terms" class="text-footer-link">Terms of
+                    <a href="terms" class="text-footer-link" data-i18n="common.terms">Terms of
                         Service</a>
                 </p>
             </footer>
@@ -110,21 +127,23 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content bg-dark text-white border border-secondary">
                 <div class="modal-header border-bottom border-secondary">
-                    <h5 class="modal-title">
+                    <h5 class="modal-title" data-i18n="modal.turbo_title">
                         <i class="fa-solid fa-square-bolt me-2 text-warning"></i> Turbo – Support Project Skye
                     </h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>If you'd like to support the Skye project, you can purchase the <strong>Turbo</strong> role for a
+                    <p data-i18n="modal.turbo_content">If you'd like to support the Skye project, you can purchase the
+                        <strong>Turbo</strong> role for a
                         one-time payment of <strong>$10.00</strong>.</p>
-                    <p>Turbo mode provides:</p>
-                    <p class="turbo-features text-center">
-                        Access to the Skye Promotion System (SPS)<br>
-                        Ability to change your Discord name color
+                    <p data-i18n="modal.turbo_features">Turbo mode provides:</p>
+                    <ul class="turbo-features text-center">
+                        <li data-i18n="modal.feature1">Access to the Skye Promotion System (SPS)</li>
+                        <li data-i18n="modal.feature2">Ability to change your Discord name color</li>
+                    </ul>
                     <div class="mt-2 mb-3 colorlist">
-                        <span class="availablecolors">available colors</span>
+                        <span class="availablecolors" data-i18n="modal.available_colors">available colors</span>
                         <i class="fa-solid fa-circle me-2" style="color: #dd1b1b;"></i>
                         <i class="fa-solid fa-circle me-2" style="color: #f6e321;"></i>
                         <i class="fa-solid fa-circle me-2" style="color: #d260ff;"></i>
@@ -137,22 +156,26 @@
                     </p>
 
                     <div class="alert alert-secondary mt-3">
-                        <i class="fa-solid fa-info-circle me-2"></i>You’ll receive a Turbo activation guide after
-                        purchase.
+                        <i class="fa-solid fa-info-circle me-2"></i> <span data-i18n="modal.turbo_note">You’ll receive a
+                            Turbo activation guide after
+                            purchase.</span>
 
                     </div>
                     <div class="alert alert-danger mt-3 d-flex align-items-start">
                         <div class="text-center">
-                            <strong>Important:</strong> During payment, you must enter a:
+                            <strong data-i18n="modal.important">Important:&nbsp;</strong><span
+                                data-i18n="modal.important_content">During payment, you must enter a:</span>
                             <div class="d-flex align-items-center justify-content-center my-2">
-                                <strong class="fs-5 me-2"><i class="fa-solid fa-key me-2 fa-sm"></i> Private Skye
+                                <strong data-i18n="modal.private_key" class="fs-5 me-2"><i
+                                        class="fa-solid fa-key me-2 fa-sm"></i> Private Skye
                                     Key</strong>
                                 <i class="fa-solid fa-circle-question text-white" data-bs-toggle="tooltip"
                                     data-bs-html="true"
                                     title="<img src='mysecretkey.png' alt='Example Key' style='max-width:200px;'>">
                                 </i>
                             </div>
-                            <small class="text-white">It can be anything you like (up to 12 characters, lowercase
+                            <small class="text-white" data-i18n="modal.key_explanation">It can be anything you like (up
+                                to 12 characters, lowercase
                                 letters, numbers, without spaces).</small>
                         </div>
                     </div>
@@ -169,7 +192,7 @@
 
                     <div class="mt-3">
                         <input type="checkbox" id="agreeRules" class="form-check-input me-2">
-                        <label for="agreeRules" class="form-check-label">
+                        <label for="agreeRules" class="form-check-label" data-i18n="modal.terms_agree">
                             I have read and understand the <a href="terms" class="skyeterms">Terms of Service</a>.
                         </label>
                     </div>
@@ -189,7 +212,8 @@
 
                 </div>
                 <div class="modal-footer border-top border-secondary">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        data-i18n="modal.close">Close</button>
                 </div>
             </div>
         </div>
@@ -214,6 +238,7 @@
     <script async src="https://js.stripe.com/v3/buy-button.js">
     </script>
     </script>
+    <script type="module" src="translations.js"></script>
 </body>
 
 </html>

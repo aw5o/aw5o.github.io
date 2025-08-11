@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Skye - Thank-you for Contribution</title>
+    <title data-i18n="success.title">Skye - Thank-you for Contribution"</title>
     <meta name="description" content="Skye offers Fortnite Bot Lobbies in 5 seconds — zero cost, always ready." />
 
     <!-- Open Graph / Facebook -->
@@ -34,20 +34,36 @@
     <link rel="shortcut icon" href="https://skye.run/skye/favicon.png" type="image/x-icon" />
 </head>
 
-<body>
+<body data-page="success">
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-3">
         <div class="container d-flex justify-content-between align-items-center" style="max-width: 1000px;">
-            <div class="d-flex align-items-center">
-                <img src="https://cdn2.steamgriddb.com/icon_thumb/1bda4c789c38754f639a376716c5859f.png" alt="Logo"
-                    width="24" height="24" class="me-2">
-                <span class="text-white fw-bold">Skye</span>
-            </div>
+<div class="d-flex align-items-center">
+    <img src="https://cdn2.steamgriddb.com/icon_thumb/1bda4c789c38754f639a376716c5859f.png" alt="Logo"
+        width="24" height="24" class="me-2">
+    <span class="text-white fw-bold">Skye</span>
+    <!-- Language Switcher -->
+    <div class="dropdown ms-3">
+        <button class="btn btn-sm btn-lang dropdown-toggle" type="button" id="languageDropdown" 
+                data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-language"></i> English
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="de">Deutsch</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="nl">Nederlands</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="pl">Polski</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="ko">한국어</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="ja">日本語</a></li>
+        </ul>
+    </div>
+</div>
             <div class="d-flex align-items-center">
                 <!-- Update the back button in navbar -->
                 <a href="./" class="btn btn-sm btn-turbo fw-semibold px-3 py-1 rounded-pill d-flex align-items-center"
                     style="color: #000;">
                     <i class="fas fa-arrow-left me-1"></i>
-                    <span class="d-none d-md-inline">Back to Home</span>
+                    <span class="d-none d-md-inline" data-i18n="common.back_to_home">Back to Home</span>
                 </a>
                 <!-- Twitter Icon Button -->
                 <a href="https://x.com/SkyeRunFN" target="_blank" rel="noopener noreferrer"
@@ -70,113 +86,100 @@
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="text-center">
-                        <img src="skye/skye-icon.svg" class="skye-icon mb-5" style="width:68px!important"><br>
-                        <h1 class="hero-heading mb-4">
-                            Thank-you for <span class="gradient-text">Contribution</span>
-                        </h1>
-                        <p class="hero-subtext mb-5">
-                            Complete these steps below in order to Activate Turbo
-                        </p>
+    <img src="skye/skye-icon.svg" class="skye-icon mb-5" style="width:68px!important"><br>
+    <h1 class="hero-heading mb-4" data-i18n="success.thank_you_heading">
+        Thank-you for <span class="gradient-text" data-i18n="success.thank_you_gradient">Contribution</span>
+    </h1>
+    <p class="hero-subtext mb-5" data-i18n="success.activate_turbo_instructions">
+        Complete these steps below in order to Activate Turbo
+    </p>
 
-                        <div class="hero-content-tutorial">
-                            <p class="hero-subtex-tutorial mb-1 text-center">
-                                1. On our <a href="https://discord.gg/7QWfj9473B" style="color:#5865F2"
-                                    class="skyeterms"><i class="fa-brands fa-discord"></i> Discord Server</a> locate
-                                channel called <span class="discord-channel"><i
-                                        class="fa-regular fa-hashtag"></i>&nbsp;🤖︱start</span>
-                            </p>
+    <div class="hero-content-tutorial">
+        <p class="hero-subtex-tutorial mb-1 text-center" data-i18n="success.step_1">
+            1. On our <a href="https://discord.gg/7QWfj9473B" style="color:#5865F2" class="skyeterms"><i class="fa-brands fa-discord"></i> Discord Server</a> locate channel called <span class="discord-channel"><i class="fa-regular fa-hashtag"></i>&nbsp;🤖︱start</span>
+        </p>
+    </div>
+    <div class="hero-content-tutorial">
+        <p class="hero-subtex-tutorial mb-1 text-center" data-i18n="success.step_2">
+            2. Click on button Activate Turbo like shown below <i class="fa-solid fa-arrow-down-left"></i>
+        </p>
+        <br>
+        <div class="discord-message" role="article" aria-label="Discord message from Skye bot">
+            <img src="https://skye.run/cdn/pfp.png" alt="Skye avatar" class="author-avatar" />
+            <div class="message-content">
+                <div class="author-line">
+                    <span class="author-name" tabindex="0" data-i18n="success.bot_name">Skye</span>
+                    <span class="bot-badge" aria-label="Bot badge"><i class="fa-solid fa-check"></i> APP</span>
+                    <span class="timestamp">04:26 PM</span>
+                </div>
+
+                <div class="discord-embed" role="region" aria-label="Discord embed message">
+                    <div class="embed-text">
+                        <div class="embed-title">
+                            <img src="https://cdn.discordapp.com/emojis/1400056560495104091.webp?size=44" alt="skye emoji" />
+                            <span data-i18n="success.embed_welcome">Welcome to Skye.run!</span>
                         </div>
-                        <div class="hero-content-tutorial">
-                            <p class="hero-subtex-tutorial mb-1 text-center">
-                                2. Click on button Activate Turbo like shown below <i
-                                    class="fa-solid fa-arrow-down-left"></i>
-                            </p>
-                            <br>
-                            <div class="discord-message" role="article" aria-label="Discord message from Skye bot">
-                                <img src="https://skye.run/cdn/pfp.png" alt="Skye avatar" class="author-avatar" />
-                                <div class="message-content">
-                                    <div class="author-line">
-                                        <span class="author-name" tabindex="0">Skye</span>
-                                        <span class="bot-badge" aria-label="Bot badge"><i class="fa-solid fa-check"></i>
-                                            APP</span>
-                                        <span class="timestamp">04:26 PM</span>
-                                    </div>
-
-                                    <div class="discord-embed" role="region" aria-label="Discord embed message">
-                                        <div class="embed-text">
-                                            <div class="embed-title">
-                                                <img src="https://cdn.discordapp.com/emojis/1400056560495104091.webp?size=44"
-                                                    alt="skye emoji" />
-                                                Welcome to Skye.run!
-                                            </div>
-                                            <div class="embed-description">
-                                                Click buttons below to either obtain free lobby bot or check status of
-                                                your
-                                                payment.<br><br>
-                                            </div>
-                                            <div class="embed-footer" aria-label="Embed footer">
-                                                <img src="https://skye.run/cdn/skye-thumbnail.png" alt="Footer icon" />
-                                                <span>www.skye.run - Fortnite Lobby Bots • Today at 04:26 PM</span>
-                                            </div>
-                                        </div>
-                                        <div class="embed-thumbnail" aria-label="Embed thumbnail">
-                                            <img src="https://skye.run/cdn/skye-thumbnail.png" alt="Skye thumbnail"
-                                                tabindex="0" />
-                                        </div>
-                                    </div>
-                                    <div class="embed-buttons">
-                                        <button class="btn-discord btn-blurple" aria-label="Get Free Lobby Bot"
-                                            disabled>
-                                            <img src="https://cdn.discordapp.com/emojis/1400056560495104091.webp?size=44"
-                                                alt="skye emoji" />
-                                            Get Free Lobby Bot
-                                        </button>
-
-                                        <button class="btn-discord btn-success" aria-label="Activate Turbo">
-                                            <img src="https://cdn.discordapp.com/emojis/1400908628218613820.webp?size=44"
-                                                alt="turboskye emoji" />
-                                            Activate Turbo
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="embed-description" data-i18n="success.embed_description">
+                            Click buttons below to either obtain free lobby bot or check status of your payment.<br><br>
                         </div>
+                        <div class="embed-footer" aria-label="Embed footer">
+                            <img src="https://skye.run/cdn/skye-thumbnail.png" alt="Footer icon" />
+                            <span data-i18n="success.embed_footer">www.skye.run - Fortnite Lobby Bots • Today at 04:26 PM</span>
+                        </div>
+                    </div>
+                    <div class="embed-thumbnail" aria-label="Embed thumbnail">
+                        <img src="https://skye.run/cdn/skye-thumbnail.png" alt="Skye thumbnail" tabindex="0" />
+                    </div>
+                </div>
+                <div class="embed-buttons">
+                    <button class="btn-discord btn-blurple" aria-label="Get Free Lobby Bot" disabled>
+                        <img src="https://cdn.discordapp.com/emojis/1400056560495104091.webp?size=44" alt="skye emoji" />
+                        <span data-i18n="success.btn_get_free_lobby_bot">Get Free Lobby Bot</span>
+                    </button>
 
-                        <div class="hero-content-tutorial">
-                            <p class="hero-subtex-tutorial mb-1 text-center">
-                                3. It will pop-up small window, where you put the <strong>Private Skye Key</strong> used
-                                during payment and click Submit
-                            </p><br>
-                            <div class="card payment-card shadow-lg border-0" style="max-width: 500px; margin: auto;">
-                                <div class="card-header d-flex align-items-center border-0">
-                                    <img src="https://skye.run/cdn/pfp.png" alt="Verify Payment" class="me-2"
-                                        style="width: 24px; height: 24px; border-radius: 100%;">
-                                    <h5 class="mb-0 skye-title-modal">Verify Payment</h5>
-                                </div>
-                                <div class="card-body">
-                                    <!-- Alert -->
-                                    <div class="alert alert-warning py-2 px-2 mb-4 d-flex" role="alert">
-                                        <i class="fa-solid fa-circle-exclamation me-2 fs-5" style="color:#ce9c5c;"></i>
-                                        <div>
-                                            This form will be submitted to Skye. Do not share passwords or other
-                                            sensitive information.
-                                        </div>
-                                    </div>
+                    <button class="btn-discord btn-success" aria-label="Activate Turbo">
+                        <img src="https://cdn.discordapp.com/emojis/1400908628218613820.webp?size=44" alt="turboskye emoji" />
+                        <span data-i18n="success.btn_activate_turbo">Activate Turbo</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                                    <!-- Field -->
-                                    <label for="skyeKey" class="form-label skyekey">
-                                        🔑 Your Private Skye Key <span class="required">*</span>
-                                    </label>
-                                    <input type="text" class="form-control" id="skyeKey"
-                                        placeholder="The secret key you used during payment..">
+    <div class="hero-content-tutorial">
+        <p class="hero-subtex-tutorial mb-1 text-center" data-i18n="success.step_3">
+            3. It will pop-up small window, where you put the <strong data-i18n="success.private_key_label">Private Skye Key</strong> used during payment and click Submit
+        </p><br>
+        <div class="card payment-card shadow-lg border-0" style="max-width: 500px; margin: auto;">
+            <div class="card-header d-flex align-items-center border-0">
+                <img src="https://skye.run/cdn/pfp.png" alt="Verify Payment" class="me-2" style="width: 24px; height: 24px; border-radius: 100%;">
+                <h5 class="mb-0 skye-title-modal" data-i18n="success.verify_payment_title">Verify Payment</h5>
+            </div>
+            <div class="card-body">
+                <!-- Alert -->
+                <div class="alert alert-warning py-2 px-2 mb-4 d-flex" role="alert">
+                    <i class="fa-solid fa-circle-exclamation me-2 fs-5" style="color:#ce9c5c;"></i>
+                    <div data-i18n="success.warning_message">
+                        This form will be submitted to Skye. Do not share passwords or other sensitive information.
+                    </div>
+                </div>
 
-                                    <!-- Buttons -->
-                                    <div class="d-flex mt-4 gap-2">
-                                        <button type="button" class="btn-discord-modal btn-cancel">Cancel</button>
-                                        <button type="submit" class="btn-discord-modal btn-blurple2">Submit</button>
-                                    </div>
-                                </div>
-                            </div>
+                <!-- Field -->
+                <label for="skyeKey" class="form-label skyekey" data-i18n="success.private_key_label">
+                    🔑 Your Private Skye Key <span class="required">*</span>
+                </label>
+                <input type="text" class="form-control" id="skyeKey" placeholder="The secret key you used during payment..">
+
+                <!-- Buttons -->
+                <div class="d-flex mt-4 gap-2">
+                    <button type="button" class="btn-discord-modal btn-cancel" data-i18n="success.btn_cancel">Cancel</button>
+                    <button type="submit" class="btn-discord-modal btn-blurple2" data-i18n="success.btn_submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
                             <script>
                                 const input = document.getElementById('skyeKey');
@@ -225,13 +228,14 @@
             <!-- Footer inside hero-section -->
             <footer class="text-center mt-4">
                 <p class="text-footer small mb-0">
-                    Brought to you by <a href="https://discord.com/users/633600812970541056"
-                        class="text-footer-link">miso</a>
+                    <span data-i18n="common.brought_by">Brought to you by</span> <a
+                        href="https://discord.com/users/633600812970541056" class="text-footer-link">miso</a>
                     <span class="separator">•</span>
                     <a href="https://fnlb.net/" target="_blank" rel="noopener noreferrer"
                         class="text-footer-link">FNLB</a>
                     <span class="separator">•</span>
-                    <a href="terms" class="text-footer-link">Terms of
+                    <!-- Terms of Service Link with Modal Trigger -->
+                    <a href="terms" class="text-footer-link" data-i18n="common.terms">Terms of
                         Service</a>
                 </p>
             </footer>
@@ -252,6 +256,7 @@
     <script src="skye/app.js"></script>
     <script async src="https://js.stripe.com/v3/buy-button.js">
     </script>
+        <script type="module" src="translations.js"></script>
 </body>
 
 </html>

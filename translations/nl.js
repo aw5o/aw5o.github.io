@@ -1,0 +1,85 @@
+const translations = {
+  // Common translations
+  "common.site_name": "Skye",
+  "common.back_to_home": "Terug naar startpagina",
+  "common.twitter": "Twitter",
+  "common.brought_by": "Gebracht naar jou door",
+  "common.terms": "Servicevoorwaarden",
+  "common.language": "Taal",
+  
+  // Index page
+  "index.title": "Skye - Fortnite Lobby Bots",
+  "index.heading": "Geniet van Fortnite<br><span class=\"gradient-text\">Opnieuw</span> met behulp van <span class=\"gradient-text\">Skye</span>",
+  "index.subtitle": "Fortnite bot lobbies in 5 seconden — Geen prijs, staat altijd klaar.",
+  "index.discord_button": "Verbind met <i class=\"fa-brands fa-discord\"></i> Discord <i class=\"fas fa-arrow-right ms-2\"></i>",
+  
+  // Terms page
+  "terms.title": "Skye - Servicevoorwaarden",
+  "terms.heading": "Servicevoorwaarden",
+  "terms.effective_date": "Ingangsdatum: 31 Juli, 2025",
+  "terms.termsofuse": "1. Gebruiksvoorwaarden",
+  "terms.accessingrules": "Door Skye.run te bezoeken of te gebruiken, gaat u akkoord met deze Servicevoorwaarden en ons Privacybeleid..",
+  "terms.whatweoffer": "2. Wat Wij Aanbieden",
+  "terms.whatweoffer_subtitle": "Skye biedt gratis, geautomatiseerde Fortnite Lobby Bots aan via Discord, waarmee gebruikers kunnen genieten van unranked AI-games. De toegang wordt volledig beheerd via onze Discord-server.",
+  "terms.accessandlimitations": "3. Toegang & Beperkingen",
+  "terms.accessandlimitations_1": "Bots worden volledig beheerd door ons systeem — gebruikers kunnen ze niet maken, beheren of wijzigen..",
+  "terms.accessandlimitations_2": "Er worden geen persoonlijke gegevens verzameld via Skye..",
+  "terms.accessandlimitations_3": "Alle interacties vinden plaats op Discord.",
+  "terms.prohibited_activities": "4. Verboden Activiteiten",
+  "terms.prohibited_activities_1": "Cheaten, Exploiten of oneerlijk spelen in Fortnite.",
+  "terms.prohibited_activities_2": "Oplichten, doorverkopen of geld verdienen met onze bots.",
+  "terms.prohibited_activities_3": "Het schenden van Epic Games’ of Discord’s hun servicevoorwaarden.",
+  "terms.prohibited_activities_note": "Enige overtredingen leiden tot onmiddellijke verwijdering van de server en verlies van toegang.",
+  "terms.bot_infrastructure": "5. Bot Infrastructuur",
+  "terms.bot_infrastructure_note": "Lobbybots worden geleverd door FNLB.net en beheerd door m1nsook (Discord ID). Skye fungeert uitsluitend als distributeur.",
+  "terms.turbo_role_title": "6. Turbo Rol – $10.00 USD (Levenslang)",
+  "terms.turbo_role_description": "Turbo wordt beschouwd als een persoonlijke bijdrage aan het project en verleent verbeterde functies en community-privileges:",
+  "terms.turbo_role_benefit_1": "Toegang om 1-7 kleuren voor nickname te wijzigen",
+  "terms.turbo_role_benefit_2": "Toegang tot advertentiesysteem",
+  "terms.turbo_role_note": "Let op: Dit is een digitaal product. Er is geen refund mogelijk. Voordelen worden direct na aankoop toegepast.",
+  "terms.community_guidelines_title": "7. Community Richtlijnen",
+  "terms.community_guidelines_1": "Niet spammen of NSFW content versturen",
+  "terms.community_guidelines_2": "Er wordt ten allen tijde respectvol gedrag verwacht",
+  "terms.community_guidelines_3": "Naleving van de Servicevoorwaarden van Discord’ is vereist",
+  "terms.community_guidelines_4": "Volg alle instructies van het Skye-personeel",
+  "terms.disclaimer_title": "8. Disclaimer",
+  "terms.disclaimer_note": "Skye is een onafhankelijke dienst en is niet gelieerd aan of goedgekeurd door Epic Games. Gebruik de dienst naar eigen keuze. Functies en toegang kunnen zonder voorafgaande opmerking worden gewijzigd of ingetrokken vanwege technische of beleidswijzigingen buiten onze controle.",
+
+
+  // Succes - post payment - page
+  "success.thank_you_heading": "Bedankt voor uw bijdrage",
+  "success.thank_you_gradient": "Bijdrage",
+  "success.activate_turbo_instructions": "Volg onderstaande stappen om Turbo te activeren",
+  "success.step_1": "1. Ga naar het <a href=\"https://discord.gg/7QWfj9473B\" style=\"color:#5865F2\" class=\"skyeterms\"><i class=\"fa-brands fa-discord\"></i> Discord�kanaal</a> en zoek het kanaal <span class=\"discord-channel\"><i class=\"fa-regular fa-hashtag\"></i>&nbsp;🤖︱start</span>",
+  "success.step_2": "2. Klik op de knop Turbo activeren zoals hieronder weergegeven <i class=\"fa-solid fa-arrow-down-left\"></i>",
+  "success.bot_name": "Skye",
+  "success.embed_welcome": "Welcome bij Skye.run!",
+  "success.embed_description": "Klik op de onderstaande knoppen om een gratis lobbybot te downloaden of de status van uw betaling te controleren.<br><br>",
+  "success.embed_footer": "www.skye.run - Fortnite Lobby Bots • Vandaag om 04:26 PM",
+  "success.btn_get_free_lobby_bot": "Krijg Gratis Lobbybot",
+  "success.btn_activate_turbo": "Turbo Activeren",
+  "success.step_3": "3. Er verschijnt een klein venster waarin u de <strong>Private Skye Key</strong> invoert die u tijdens de betaling hebt gebruikt en op Verzenden klikt.",
+  "success.private_key_label": "Private Skye Key",
+  "success.verify_payment_title": "Verifieer Betaling",
+  "success.warning_message": "Dit formulier wordt naar Skye verzonden. Deel geen wachtwoorden of andere gevoelige informatie.",
+  "success.btn_cancel": "Annuleren",
+  "success.btn_submit": "Verzenden",
+
+
+  // Turbo Modal
+  "modal.turbo_title": "<i class=\"fa-solid fa-square-bolt me-2 text-warning\"></i> Turbo – Support Het Skye-project",
+  "modal.turbo_content": "Als u het Skye-project wilt steunen, kunt u de <strong>Turbo</strong>-rol kopen voor een eenmalige betaling van <strong>$ 10,00</strong>",
+  "modal.turbo_features": "Turbomodus biedt:",
+  "modal.feature1": "Toegang tot het Skye Promotie Systeem (SPS)",
+  "modal.feature2": "Mogelijkheid om de kleur van je Discord-naam te veranderen",
+  "modal.available_colors": "beschikbare kleuren",
+  "modal.turbo_note": "Na aankoop ontvang je een Turbo-activeringsgids.",
+  "modal.important": "Belangrijk:",
+  "modal.important_content": "Tijdens de betaling moet u het volgende invoeren:",
+  "modal.private_key": "Private Skye Key",
+  "modal.key_explanation": "Het kan alles zijn wat u wilt (maximaal 12 tekens, kleine letters, cijfers, zonder spaties).",
+  "modal.terms_agree": "Ik heb de<a href=\"terms\" class=\"skyeterms\">Servicevoorwaarden gelezen en begrepen</a>.",
+  "modal.close": "Sluiten"
+};
+
+export default translations;

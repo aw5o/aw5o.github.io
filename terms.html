@@ -5,8 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Skye - Terms of Service</title>
-    <meta name="description" content="Skye offers Fortnite Bot Lobbies in 5 seconds — zero cost, always ready." />
+    <title data-i18n="terms.title">Skye - Terms of Service</title>
+    <meta name="description" content="Skye offers Fortnite Bot Lobbies in 5 seconds — zero cost, always ready."
+        data-i18n="index.description">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -34,19 +35,35 @@
     <link rel="shortcut icon" href="https://skye.run/skye/favicon.png" type="image/x-icon" />
 </head>
 
-<body>
+<body data-page="terms">
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-3">
         <div class="container d-flex justify-content-between align-items-center" style="max-width: 1000px;">
-            <div class="d-flex align-items-center">
-                <img src="https://cdn2.steamgriddb.com/icon_thumb/1bda4c789c38754f639a376716c5859f.png" alt="Logo"
-                    width="24" height="24" class="me-2">
-                <span class="text-white fw-bold">Skye</span>
-            </div>
+<div class="d-flex align-items-center">
+    <img src="https://cdn2.steamgriddb.com/icon_thumb/1bda4c789c38754f639a376716c5859f.png" alt="Logo"
+        width="24" height="24" class="me-2">
+    <span class="text-white fw-bold">Skye</span>
+    <!-- Language Switcher -->
+    <div class="dropdown ms-3">
+        <button class="btn btn-sm btn-lang dropdown-toggle" type="button" id="languageDropdown" 
+                data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-language"></i> English
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="de">Deutsch</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="nl">Nederlands</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="pl">Polski</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="ko">한국어</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="ja">日本語</a></li>
+        </ul>
+    </div>
+</div>
             <div class="d-flex align-items-center">
                 <a href="./" class="btn btn-sm btn-turbo fw-semibold px-3 py-1 rounded-pill d-flex align-items-center"
                     style="color: #000;">
                     <i class="fas fa-arrow-left me-1"></i>
-                    <span class="d-none d-md-inline">Back to Home</span>
+                    <span class="d-none d-md-inline" data-i18n="common.back_to_home">Back to Home</span>
                 </a>
                 <!-- Twitter Icon Button -->
                 <a href="https://x.com/SkyeRunFN" target="_blank" rel="noopener noreferrer"
@@ -70,90 +87,58 @@
                 <div class="col-12">
                     <div class="text-center">
                         <img src="skye/skye-icon.svg" class="skye-icon mb-5" style="width:50px!important"><br>
-                        <h1 class="hero-heading mb-4">
+                        <h1 class="hero-heading mb-4" data-i18n="terms.heading">
                             Terms of Service
                         </h1>
 
                         <div class="hero-content">
-                            <p class="hero-subtext mb-5 text-center">
-                                Effective Date: July 31, 2025
-                            </p>
-                            <h5>1. Terms of Use</h5>
-                            <p class="mb-3">By accessing or using Skye.run, you agree to these Terms of Service and our
-                                Privacy
-                                Policy.</p>
-                            <hr>
-                            <h5>2. What We Offer</h5>
-                            <p class="mb-3">Skye provides free, automated Fortnite Lobby Bots through Discord, enabling
-                                users to
-                                enjoy unranked AI matches. Access is managed entirely within our Discord server.
-                            </p>
-                            <hr>
-                            <h5>3. Access & Limitations</h5>
-                            <ul class="mb-3">
-                                <li>Bots are fully managed by our system — users cannot create, control, or modify them.
-                                </li>
-                                <li>No personal data is collected through Skye.</li>
-                                <li>All interactions take place on Discord.</li>
-                            </ul>
-                            <hr>
-                            <h5>4. Prohibited Activities</h5>
-                            <ul class="mb-3">
-                                <li>Cheating, exploiting, or unfair play in Fortnite.
-                                </li>
-                                <li>Scamming, reselling, or monetizing our bots.
-                                </li>
-                                <li>AViolating Epic Games’ or Discord’s terms of service.
-                                </li>
-                            </ul>
-                            <p class="mb-3">Any violations will result in immediate removal from the server and loss of
-                                access.
-                            </p>
-                            <hr>
-                            <h5>5. Bot Infrastructure</h5>
-                            <p class="mb-3">Lobby bots are provided by FNLB.net and operated by m1nsook (Discord ID).
-                                Skye
-                                serves solely as a distributor.
+    <p class="hero-subtext mb-5 text-center" data-i18n="terms.effective_date">
+        Effective Date: July 31, 2025
+    </p>
+    <h5 data-i18n="terms.termsofuse">1. Terms of Use</h5>
+    <p class="mb-3" data-i18n="terms.accessingrules">By accessing or using Skye.run, you agree to these Terms of Service and our Privacy Policy.</p>
+    <hr>
+    <h5 data-i18n="terms.whatweoffer">2. What We Offer</h5>
+    <p class="mb-3" data-i18n="terms.whatweoffer_subtitle">Skye provides free, automated Fortnite Lobby Bots through Discord, enabling users to enjoy unranked AI matches. Access is managed entirely within our Discord server.</p>
+    <hr>
+    <h5 data-i18n="terms.accessandlimitations">3. Access & Limitations</h5>
+    <ul class="mb-3">
+        <li data-i18n="terms.accessandlimitations_1">Bots are fully managed by our system — users cannot create, control, or modify them.</li>
+        <li data-i18n="terms.accessandlimitations_2">No personal data is collected through Skye.</li>
+        <li data-i18n="terms.accessandlimitations_3">All interactions take place on Discord.</li>
+    </ul>
+    <hr>
+    <h5 data-i18n="terms.prohibited_activities">4. Prohibited Activities</h5>
+    <ul class="mb-3">
+        <li data-i18n="terms.prohibited_activities_1">Cheating, exploiting, or unfair play in Fortnite.</li>
+        <li data-i18n="terms.prohibited_activities_2">Scamming, reselling, or monetizing our bots.</li>
+        <li data-i18n="terms.prohibited_activities_3">Violating Epic Games’ or Discord’s terms of service.</li>
+    </ul>
+    <p class="mb-3" data-i18n="terms.prohibited_activities_note">Any violations will result in immediate removal from the server and loss of access.</p>
+    <hr>
+    <h5 data-i18n="terms.bot_infrastructure">5. Bot Infrastructure</h5>
+    <p class="mb-3" data-i18n="terms.bot_infrastructure_note">Lobby bots are provided by FNLB.net and operated by m1nsook (Discord ID). Skye serves solely as a distributor.</p>
+    <hr>
+    <h5 data-i18n="terms.turbo_role_title">6. Turbo Role – $10.00 USD (Lifetime)</h5>
+    <p class="mb-3" data-i18n="terms.turbo_role_description">Turbo is taken as personal contribution towards the project and grants enhanced features and community privileges:</p>
+    <ul class="mb-3">
+        <li data-i18n="terms.turbo_role_benefit_1">Access to change 1-7 colors for nickname</li>
+        <li data-i18n="terms.turbo_role_benefit_2">Access to Advertisement system</li>
+    </ul>
+    <p class="mb-3" data-i18n="terms.turbo_role_note">Note: This is a digital product. No refunds are available. Benefits are applied immediately after purchase.</p>
+    <hr>
+    <h5 data-i18n="terms.community_guidelines_title">7. Community Guidelines</h5>
+    <ul class="mb-3">
+        <li data-i18n="terms.community_guidelines_1">No spamming or NSFW content</li>
+        <li data-i18n="terms.community_guidelines_2">Respectful behavior is expected at all times</li>
+        <li data-i18n="terms.community_guidelines_3">Adherence to Discord’s Terms of Service is required</li>
+        <li data-i18n="terms.community_guidelines_4">Follow all directions from Skye staff members</li>
+    </ul>
+    <hr>
+    <h5 data-i18n="terms.disclaimer_title">8. Disclaimer</h5>
+    <p class="mb-3" data-i18n="terms.disclaimer_note">Skye is an independent service and is not affiliated with or endorsed by Epic Games. Use at your own discretion. Features and access may be modified or revoked without notice due to technical or policy changes beyond our control.</p>
+</div>
 
-                            </p>
-                            <hr>
-                            <h5>6. Turbo Role – $10.00 USD (Lifetime)
-
-                            </h5>
-                            <p class="mb-3">Turbo is taken as personal contribution towards the project and grants
-                                enhanced
-                                features and community privileges:</p>
-                            <ul class="mb-3">
-                                <li>Access to change 1-7 colors for nickname</li>
-                                <li>Access to Advertisement system</li>
-                            </ul>
-                            <p class="mb-3">Note: This is a digital product. No refunds are available. Benefits are
-                                applied
-                                immediately after purchase.
-
-                            </p>
-                            <hr>
-                            <h5>7. Community Guidelines</h5>
-                            </h5>
-                            <ul class="mb-3">
-                                <li>No spamming or NSFW content</li>
-                                <li>Respectful behavior is expected at all times
-                                </li>
-                                <li>Adherence to Discord’s Terms of Service is required
-                                </li>
-                                <li>Follow all directions from Skye staff members</li>
-                            </ul>
-                            <hr>
-                            <h5>8. Disclaimer</h5>
-                            </h5>
-                            <p class="mb-3">Skye is an independent service and is not affiliated with or endorsed by
-                                Epic Games.
-                                Use at your own discretion. Features and access may be modified or revoked without
-                                notice due to
-                                technical or policy changes beyond our control.
-
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -161,14 +146,14 @@
             <!-- Footer inside hero-section -->
             <footer class="text-center mt-4">
                 <p class="text-footer small mb-0">
-                    Brought to you by <a href="https://discord.com/users/633600812970541056"
-                        class="text-footer-link">miso</a>
+                    <span data-i18n="common.brought_by">Brought to you by</span> <a
+                        href="https://discord.com/users/633600812970541056" class="text-footer-link">miso</a>
                     <span class="separator">•</span>
                     <a href="https://fnlb.net/" target="_blank" rel="noopener noreferrer"
                         class="text-footer-link">FNLB</a>
                     <span class="separator">•</span>
                     <!-- Terms of Service Link with Modal Trigger -->
-                    <a href="terms" class="text-footer-link">Terms of
+                    <a href="terms" class="text-footer-link" data-i18n="common.terms">Terms of
                         Service</a>
                 </p>
             </footer>
@@ -187,6 +172,7 @@
     <script src="skye/app.js"></script>
     <script async src="https://js.stripe.com/v3/buy-button.js">
     </script>
+        <script type="module" src="translations.js"></script>
 </body>
 
 </html>

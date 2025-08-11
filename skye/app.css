@@ -335,7 +335,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.21);
   border-radius: 24px;
   padding: 15px 10px 10px; /* top padding for space under label */
-  width: 220px;
+  width: 320px;
   margin: 0 auto;
   position: relative; /* allows label positioning */
   text-align: center;
@@ -350,7 +350,7 @@ body {
   padding: 0 8px;
   font-weight: 600;
   font-size: 10px;
-  width: 150px;
+  width: 200px;
   letter-spacing: 2.2px;
   text-transform: uppercase;
   color: #ffffff;
@@ -1156,4 +1156,30 @@ body {
 .social-skye:hover {
   color: #fff;
   text-decoration: none;
+}
+/* Language Switcher */
+.dropdown-menu {
+    background-color: #131416;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-item {
+    color: #dbdcdf;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #1e1f22;
+    color: #fff;
+}
+
+#languageDropdown {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+}
+.btn-lang {
+  border-radius: 10px;
+      font-size: 22px;
+      color: rgba(241, 247, 254, 0.71);
+  border: none;
 }
