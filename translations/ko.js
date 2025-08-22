@@ -12,7 +12,14 @@ const translations = {
   "index.heading": "스카이와 함께<br><span class=\"gradient-text\">다시</span> 포트나이트를 즐겨보세요",
   "index.subtitle": "5초 만에 포트나이트 봇 로비 — 무료, 항상 준비 완료.",
   "index.discord_button": "<i class=\"fa-brands fa-discord\"></i> 디스코드로 연결하기 <i class=\"fas fa-arrow-right ms-2\"></i>",
-
+"index.turbo_button_prefix": "잠금 해제",
+  "index.turbo_button_suffix": " Turbo",
+  
+  // Turbo page
+"turbo.hero_heading_prefix": "업그레이드:",
+"turbo.hero_heading_highlight": "Turbo",
+"turbo.hero_subtext": "Skye 프로젝트를 지원하고 독점 기능을 잠금 해제하세요",
+  
   // Terms page
   "terms.title": "스카이 – 이용 약관",
   "terms.heading": "이용 약관",
@@ -77,7 +84,8 @@ const translations = {
   "modal.private_key": "개인 Skye 키",
   "modal.key_explanation": "12자 이하, 소문자와 숫자만 가능하며, 공백 없이 자유롭게 설정하세요.",
   "modal.terms_agree": "<a href=\"terms\" class=\"skyeterms\">이용 약관</a>을 읽고 이해했습니다.",
-  "modal.close": "닫기"
+  "modal.close": "닫기",
+
 };
 
 export default translations;

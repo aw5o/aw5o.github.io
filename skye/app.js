@@ -16,6 +16,8 @@ btn.addEventListener('click', () => {
   }, 1000);
 });
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Language management
     const langDropdown = document.getElementById('languageDropdown');

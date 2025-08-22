@@ -12,7 +12,14 @@ const translations = {
   "index.heading": "スカイで<br><span class=\"gradient-text\">また</span>フォートナイトを楽しもう",
   "index.subtitle": "5秒でフォートナイトのボットロビー — 無料でいつでも使える。",
   "index.discord_button": "<i class=\"fa-brands fa-discord\"></i> Discordで接続 <i class=\"fas fa-arrow-right ms-2\"></i>",
-
+"index.turbo_button_prefix": "アンロック",
+  "index.turbo_button_suffix": " Turbo",
+  
+  // Turbo page
+"turbo.hero_heading_prefix": "アップグレード:",
+"turbo.hero_heading_highlight": "Turbo",
+"turbo.hero_subtext": "Skyeプロジェクトを支援して、限定機能をアンロックしましょう",
+  
   // Terms page
   "terms.title": "スカイ - 利用規約",
   "terms.heading": "利用規約",
@@ -77,7 +84,7 @@ const translations = {
   "modal.private_key": "プライベート Skye キー",
   "modal.key_explanation": "12文字以内で、小文字と数字のみ。スペースなしで好きなものを設定してください。",
   "modal.terms_agree": "<a href=\"terms\" class=\"skyeterms\">利用規約</a>を読んで理解しました。",
-  "modal.close": "閉じる"
+  "modal.close": "閉じる",
 };
 
 export default translations;

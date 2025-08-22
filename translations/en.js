@@ -12,6 +12,13 @@ const translations = {
   "index.heading": "Enjoy Fortnite<br><span class=\"gradient-text\">again</span> with help of <span class=\"gradient-text\">Skye</span>",
   "index.subtitle": "Fortnite bot lobbies in 5 seconds — zero cost, always ready.",
   "index.discord_button": "Connect with <i class=\"fa-brands fa-discord\"></i> Discord <i class=\"fas fa-arrow-right ms-2\"></i>",
+  "index.turbo_button_prefix": "Unlock",
+  "index.turbo_button_suffix": " Turbo",
+  
+  // Turbo page
+  "turbo.hero_heading_prefix": "Upgrade to",
+  "turbo.hero_heading_highlight": "Turbo",
+  "turbo.hero_subtext": "Support the Skye project and unlock exclusive features",
   
   // Terms page
   "terms.title": "Skye - Terms of Service",

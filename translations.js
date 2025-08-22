@@ -16,19 +16,19 @@ const languages = {
 // Load translations for the current language
 async function loadTranslations(lang) {
   try {
-    const module = await import(`./translations/${lang}.js`);
+    const module = await import(`./translations/${lang}.js?update=${Date.now()}`);
     translations = module.default;
     currentLanguage = lang;
     localStorage.setItem('preferredLanguage', lang);
     applyTranslations();
   } catch (error) {
     console.error(`Error loading ${lang} translations:`, error);
-    // Fallback to English if selected language fails
     if (lang !== 'en') {
       await loadTranslations('en');
     }
   }
 }
+
 
 // Apply translations to the page
 function applyTranslations() {
@@ -73,7 +73,10 @@ async function initTranslations() {
     document.body.dataset.page = 'terms';
   } else if (path.includes('success')) {
     document.body.dataset.page = 'success';
-  } else {
+    } else if (path.includes('turbo')) {
+    document.body.dataset.page = 'turbo';
+  } 
+  else {
     document.body.dataset.page = 'index';
   }
   

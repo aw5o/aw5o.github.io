@@ -327,9 +327,7 @@ body {
   padding: 6px;
 }
 .stripewrapper {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  border-radius: 24px;
+
 }
 .colorlist {
   border: 1px solid rgba(255, 255, 255, 0.21);
@@ -432,11 +430,11 @@ body {
   text-decoration: none;
 }
 
-.btn-turbo {
+.btn-turbo-mini {
   background: #fff;
 }
 
-.btn-turbo:hover {
+.btn-turbo-mini:hover {
   background: #fff;
   text-decoration: none;
   color: #000;
@@ -1159,27 +1157,131 @@ body {
 }
 /* Language Switcher */
 .dropdown-menu {
-    background-color: #131416;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #131416;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .dropdown-item {
-    color: #dbdcdf;
-    transition: all 0.3s ease;
+  color: #dbdcdf;
+  transition: all 0.3s ease;
 }
 
 .dropdown-item:hover {
-    background-color: #1e1f22;
-    color: #fff;
+  background-color: #1e1f22;
+  color: #fff;
 }
 
 #languageDropdown {
-    padding: 0.25rem 0.75rem;
-    font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
 }
 .btn-lang {
   border-radius: 10px;
-      font-size: 22px;
-      color: rgba(241, 247, 254, 0.71);
+  font-size: 22px;
+  color: rgba(241, 247, 254, 0.71);
   border: none;
 }
+
+/* Button wrapper with border */
+.btn-turbo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+    padding: 1.1rem 2.5rem;
+  border-radius: 16px;
+  text-decoration: none;;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+  transition: transform 0.3s ease; /* smooth lift */
+}
+
+/* Black background layer inside border */
+.btn-turbo::after {
+  content: "";
+  position: absolute;
+  inset: 2px; /* border thickness */
+  border-radius: 14px;
+  background: #000;
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+/* Border gradient */
+.btn-turbo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(270deg, #ff7700, #ff0051, #fff, #ff7700, #ff0051);
+  background-size: 300% 300%;
+  animation: gradient-loop 6s ease infinite;
+  z-index: 0;
+  transition: all 0.3s ease;
+}
+
+/* Hover shine effect */
+.btn-turbo-shine {
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.0), rgba(255, 72, 0, 0.2), rgba(255,255,255,0.0));
+  transform: skewX(-20deg);
+  z-index: 2;
+  pointer-events: none;
+  transition: all 6s ease;
+}
+
+/* Text gradient */
+.btn-turbo-inner {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+    font-size: 19px;
+    line-height:29px;
+  font-weight: 500;
+
+  background-image: linear-gradient(270deg, #ff7700, #ff0051, #fff, #ff7700, #ff0051);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-loop 6s ease infinite;
+  transition: all 0.3s ease;
+}
+
+/* Hover lift & shine animation */
+.btn-turbo:hover {
+  transform: translateY(-5px);
+}
+
+.btn-turbo:hover .btn-turbo-shine {
+  left: 125%;
+  transition: all 0.8s ease;
+}
+
+/* Gradient animation */
+@keyframes gradient-loop {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@media (max-width: 768px){
+.btn-turbo{padding:1rem 2rem;font-size:1.1rem;}
+}
+@media (max-width: 768px){
+.btn-turbo{padding:0.9rem 1.8rem;font-size:1rem;}
+}
+@media (max-width: 576px){
+.btn-turbo{width:90%;padding:0.8rem;}
+}
+@media (max-width: 768px){
+.btn-turbo{padding:1rem 1.8rem;font-size:1.1rem;}
+}
+@media (max-width: 576px){
+.btn-turbo{width:100%;padding:0.9rem;}

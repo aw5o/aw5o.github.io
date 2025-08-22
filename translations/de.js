@@ -12,7 +12,14 @@ const translations = {
   "index.heading": "Zock Fortnite<br><span class=\"gradient-text\">wieder</span> mit <span class=\"gradient-text\">Skye</span>",
   "index.subtitle": "Lobby-Bots in 5 Sekunden – gratis und immer bereit.",
   "index.discord_button": "Komm auf <i class=\"fa-brands fa-discord\"></i> Discord <i class=\"fas fa-arrow-right ms-2\"></i>",
-
+"index.turbo_button_prefix": "Freischalten",
+  "index.turbo_button_suffix": " Turbo",
+  
+  // Turbo page
+"turbo.hero_heading_prefix": "Upgrade auf",
+"turbo.hero_heading_highlight": "Turbo",
+"turbo.hero_subtext": "Unterstütze das Skye-Projekt und schalte exklusive Funktionen frei",
+  
   // Terms page
   "terms.title": "Skye – Regeln & Infos",
   "terms.heading": "Regeln & Infos",
@@ -77,7 +84,10 @@ const translations = {
   "modal.private_key": "Privater Skye Key",
   "modal.key_explanation": "Kann alles sein (bis 12 Zeichen, Kleinbuchstaben, Zahlen, keine Leerzeichen).",
   "modal.terms_agree": "Ich hab die <a href=\"terms\" class=\"skyeterms\">Regeln & Infos</a> gelesen und gecheckt.",
-  "modal.close": "Zu"
+  "modal.close": "Zu",
+  "turbo.title": "Upgrade auf <span class=\"gradient-text\">Turbo</span>",
+  "turbo.description": "Unterstütze das Skye-Projekt und schalte exklusive Funktionen frei"
+
 };
 
 export default translations;

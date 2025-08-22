@@ -12,7 +12,13 @@ const translations = {
   "index.heading": "Ciesz się Fortnite<br><span class=\"gradient-text\">znów</span> dzięki <span class=\"gradient-text\">Skye</span>",
   "index.subtitle": "Boty do Fortnite lobby w 5 sekund — za darmo, zawsze gotowe.",
   "index.discord_button": "Połącz się z <i class=\"fa-brands fa-discord\"></i> Discordem <i class=\"fas fa-arrow-right ms-2\"></i>",
-
+"index.turbo_button_prefix": "Odblokuj",
+  "index.turbo_button_suffix": " Turbo",
+  // Turbo page
+"turbo.hero_heading_prefix": "Ulepsz do",
+"turbo.hero_heading_highlight": "Turbo",
+"turbo.hero_subtext": "Wesprzyj projekt Skye i odblokuj ekskluzywne funkcje",
+  
   // Terms page
   "terms.title": "Skye – Regulamin",
   "terms.heading": "Regulamin",
@@ -77,7 +83,8 @@ const translations = {
   "modal.private_key": "Prywatny klucz Skye",
   "modal.key_explanation": "To może być cokolwiek (do 12 znaków, małe litery, cyfry, bez spacji).",
   "modal.terms_agree": "Przeczytałem i rozumiem <a href=\"terms\" class=\"skyeterms\">Regulamin</a>.",
-  "modal.close": "Zamknij"
+  "modal.close": "Zamknij",
+  
 };
 
 export default translations;
